@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preview de Temas - Portfolio Lucas Giovinazzo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            padding: 2rem;
+            background: #f5f5f5;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 3rem;
+        }
+
+        .themes-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .theme-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .theme-preview {
+            height: 400px;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .theme-info {
+            padding: 1.5rem;
+            border-top: 1px solid #eee;
+        }
+
+        .theme-info h2 {
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .badge {
+            font-size: 0.75rem;
+            padding: 0.25rem 0.75rem;
+            border-radius: 12px;
+            font-weight: 600;
+        }
+
+        .badge-active {
+            background: #10b981;
+            color: white;
+        }
+
+        .theme-description {
+            color: #666;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .theme-features {
+            list-style: none;
+            margin-bottom: 1rem;
+        }
+
+        .theme-features li {
+            padding: 0.25rem 0;
+            color: #444;
+            font-size: 0.9rem;
+        }
+
+        .theme-features li::before {
+            content: "✓ ";
+            color: #10b981;
+            font-weight: bold;
+        }
+
+        .color-palette {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .color-swatch {
+            width: 40px;
+            height: 40px;
+            border-radius: 6px;
+            border: 2px solid #ddd;
+        }
+
+        .code-block {
+            background: #1e293b;
+            color: #e2e8f0;
+            padding: 1rem;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.85rem;
+            margin-top: 1rem;
+        }
+
+        /* Tema Claro Preview */
+        .preview-claro {
+            background: #ffffff;
+            color: #0f172a;
+        }
+
+        .preview-claro .preview-header {
+            background: linear-gradient(135deg, #2563eb, #3b82f6);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+
+        .preview-claro .preview-button {
+            background: #2563eb;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            border: none;
+            font-weight: 600;
+        }
+
+        /* Tema Oscuro Preview */
+        .preview-oscuro {
+            background: #0f172a;
+            color: #f1f5f9;
+        }
+
+        .preview-oscuro .preview-header {
+            background: linear-gradient(135deg, #3b82f6, #60a5fa);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+
+        .preview-oscuro .preview-button {
+            background: #3b82f6;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            border: none;
+            font-weight: 600;
+        }
+
+        /* Tema Mint Preview */
+        .preview-mint {
+            background: #0a192f;
+            color: #ccd6f6;
+        }
+
+        .preview-mint .preview-header {
+            background: transparent;
+            border: 2px solid #64ffda;
+            color: #64ffda;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(100, 255, 218, 0.3);
+        }
+
+        .preview-mint .preview-button {
+            background: transparent;
+            color: #64ffda;
+            border: 2px solid #64ffda;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            font-weight: 600;
+        }
+
+        .instructions {
+            max-width: 800px;
+            margin: 3rem auto;
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .instructions h3 {
+            margin-bottom: 1rem;
+            color: #2563eb;
+        }
+
+        .instructions ol {
+            margin-left: 1.5rem;
+            line-height: 1.8;
+        }
+    </style>
+</head>
+<body>
+    <h1>🎨 Preview de Temas - Portfolio</h1>
+    <p class="subtitle">Elegí el tema que mejor represente tu estilo profesional</p>
+
+    <div class="themes-container">
+        <!-- Tema Claro -->
+        <div class="theme-card">
+            <div class="theme-preview preview-claro">
+                <div class="preview-header">
+                    <h3>Lucas Giovinazzo</h3>
+                    <p>Desarrollador Web Full-Stack</p>
+                </div>
+                <button class="preview-button">Ver Proyectos</button>
+                <p style="margin-top: 1rem;">Este es un ejemplo del tema claro con fondo blanco y acentos azules modernos.</p>
+            </div>
+            <div class="theme-info">
+                <h2>
+                    Tema Claro
+                    <span class="badge badge-active">ACTIVO</span>
+                </h2>
+                <p class="theme-description">
+                    Paleta profesional y tradicional. Ideal para clientes corporativos e institucionales.
+                </p>
+                <ul class="theme-features">
+                    <li>Máxima legibilidad</li>
+                    <li>Look profesional tradicional</li>
+                    <li>Ideal para imprimir</li>
+                    <li>Familiar para todo público</li>
+                </ul>
+                <div class="color-palette">
+                    <div class="color-swatch" style="background: #2563eb;" title="Primary"></div>
+                    <div class="color-swatch" style="background: #ffffff; border-color: #ccc;" title="Background"></div>
+                    <div class="color-swatch" style="background: #0f172a;" title="Text"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tema Oscuro -->
+        <div class="theme-card">
+            <div class="theme-preview preview-oscuro">
+                <div class="preview-header">
+                    <h3>Lucas Giovinazzo</h3>
+                    <p>Desarrollador Web Full-Stack</p>
+                </div>
+                <button class="preview-button">Ver Proyectos</button>
+                <p style="margin-top: 1rem; color: #cbd5e1;">Este es un ejemplo del tema oscuro con fondo navy y acentos azul brillante.</p>
+            </div>
+            <div class="theme-info">
+                <h2>Tema Oscuro</h2>
+                <p class="theme-description">
+                    Dark mode moderno y elegante. Perfecto balance entre profesional y tech.
+                </p>
+                <ul class="theme-features">
+                    <li>Menos fatiga visual</li>
+                    <li>Look moderno y tech</li>
+                    <li>Elegante y sofisticado</li>
+                    <li>Ideal para developers</li>
+                </ul>
+                <div class="color-palette">
+                    <div class="color-swatch" style="background: #3b82f6;" title="Primary"></div>
+                    <div class="color-swatch" style="background: #0f172a;" title="Background"></div>
+                    <div class="color-swatch" style="background: #f1f5f9;" title="Text"></div>
+                </div>
+                <div class="code-block">
+                    &lt;link href="css/theme-dark.css"&gt;<br>
+                    &lt;link href="css/styles.css"&gt;
+                </div>
+            </div>
+        </div>
+
+        <!-- Tema Mint -->
+        <div class="theme-card">
+            <div class="theme-preview preview-mint">
+                <div class="preview-header">
+                    <h3>Lucas Giovinazzo</h3>
+                    <p>Desarrollador Web Full-Stack</p>
+                </div>
+                <button class="preview-button">Ver Proyectos</button>
+                <p style="margin-top: 1rem; color: #8892b0;">Este es un ejemplo del tema mint con efectos glow y acento verde menta.</p>
+            </div>
+            <div class="theme-info">
+                <h2>Tema Mint</h2>
+                <p class="theme-description">
+                    Developer aesthetic con acento verde menta. Único y memorable.
+                </p>
+                <ul class="theme-features">
+                    <li>Muy llamativo y único</li>
+                    <li>Estilo developer popular</li>
+                    <li>Efectos visuales cool</li>
+                    <li>Te diferencia del resto</li>
+                </ul>
+                <div class="color-palette">
+                    <div class="color-swatch" style="background: #64ffda;" title="Primary"></div>
+                    <div class="color-swatch" style="background: #0a192f;" title="Background"></div>
+                    <div class="color-swatch" style="background: #ccd6f6;" title="Text"></div>
+                </div>
+                <div class="code-block">
+                    &lt;link href="css/theme-mint.css"&gt;<br>
+                    &lt;link href="css/styles.css"&gt;
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="instructions">
+        <h3>📋 Cómo Cambiar de Tema</h3>
+        <ol>
+            <li>Abrí <code>index.html</code> en un editor de texto</li>
+            <li>Buscá la línea que dice: <code>&lt;link rel="stylesheet" href="css/styles.css"&gt;</code></li>
+            <li>ENCIMA de esa línea, agregá el tema que querés (ver ejemplos arriba)</li>
+            <li>Guardá el archivo y refrescá el navegador</li>
+            <li>Repetí el proceso en <code>proyectos/ispm.html</code></li>
+        </ol>
+
+        <p style="margin-top: 1rem; color: #666;">
+            <strong>Tip:</strong> Probá los 3 temas, mostráselos a amigos, y elegí el que mejor te represente.
+            El tema claro es más tradicional, el oscuro es moderno y profesional, y el mint es único y llamativo.
+        </p>
+
+        <p style="margin-top: 1rem; color: #666;">
+            <strong>Recomendación:</strong> Para clientes institucionales/empresas → <strong>CLARO</strong>.
+            Para startups/tech → <strong>OSCURO</strong>. Para destacar como developer → <strong>MINT</strong>.
+        </p>
+    </div>
+</body>
+</html>

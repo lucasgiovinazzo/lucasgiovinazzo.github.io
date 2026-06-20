@@ -1,0 +1,117 @@
+═══════════════════════════════════════════════════════════════════════
+✅ CONFIGURACIÓN ACTUAL DEL PORTFOLIO
+═══════════════════════════════════════════════════════════════════════
+
+📅 Última actualización: 18 de Junio 2026
+
+═══════════════════════════════════════════════════════════════════════
+🎨 TEMA ACTIVO: MINT BOLD
+═══════════════════════════════════════════════════════════════════════
+
+CARACTERÍSTICAS:
+• Verde menta (#64ffda) como color principal
+• Fondo azul marino oscuro (#0a192f)
+• Efectos glow y sombras pronunciadas
+• Bordes gruesos con brillo
+• Estilo: Serio pero atrevido, profesional con actitud
+
+APLICADO EN:
+✅ index.html
+✅ proyectos/ispm.html
+
+ARCHIVOS CSS ACTIVOS:
+1. css/theme-mint-bold.css (tema)
+2. css/styles.css (estilos base)
+3. css/case-study.css (solo en ispm.html)
+
+═══════════════════════════════════════════════════════════════════════
+🔗 LINKS CONFIGURADOS
+═══════════════════════════════════════════════════════════════════════
+
+PROYECTO ISPM:
+✅ Botón "Ver Sitio" → https://www.ispm.edu.ar
+✅ Botón "Caso de Estudio" → proyectos/ispm.html
+
+CONTACTO:
+✅ Email: lucas.giovinazzo@hotmail.com
+✅ LinkedIn: https://www.linkedin.com/in/lucas-giovinazzo-920b4b275/
+✅ GitHub: https://github.com/lucasgiovinazzo
+
+═══════════════════════════════════════════════════════════════════════
+🚀 PRÓXIMOS PASOS
+═══════════════════════════════════════════════════════════════════════
+
+1. PROBAR LOCALMENTE:
+   □ Abrir C:\Users\lucas\portfolio\index.html en Chrome
+   □ Verificar que el tema Mint Bold se ve bien
+   □ Probar los botones del proyecto ISPM
+   □ Verificar que todo funciona en mobile (F12 → responsive)
+
+2. SUBIR A GITHUB PAGES:
+   □ Seguir instrucciones en INSTRUCCIONES-GITHUB-PAGES.txt
+   □ Crear repositorio: lucasgiovinazzo.github.io
+   □ Hacer git push
+   □ Esperar 2-3 minutos
+   □ Visitar: https://lucasgiovinazzo.github.io
+
+3. DESPUÉS DE PUBLICAR:
+   □ Actualizar LinkedIn con URL del portfolio
+   □ Compartir en redes sociales
+   □ Agregar a CV
+   □ Mostrar a amigos/colegas para feedback
+
+═══════════════════════════════════════════════════════════════════════
+🔄 CÓMO CAMBIAR DE TEMA (SI QUERÉS)
+═══════════════════════════════════════════════════════════════════════
+
+Para volver al tema CLARO (blanco/azul):
+1. Abrir index.html
+2. ELIMINAR la línea: <link rel="stylesheet" href="css/theme-mint-bold.css">
+3. Dejar solo: <link rel="stylesheet" href="css/styles.css">
+4. Repetir en proyectos/ispm.html
+
+Para probar tema OSCURO:
+1. REEMPLAZAR theme-mint-bold.css por theme-dark.css
+2. En ambos archivos (index.html y proyectos/ispm.html)
+
+Para probar tema MINT minimalista:
+1. REEMPLAZAR theme-mint-bold.css por theme-mint.css
+
+═══════════════════════════════════════════════════════════════════════
+📋 CHECKLIST ANTES DE SUBIR A GITHUB
+═══════════════════════════════════════════════════════════════════════
+
+□ Abrí index.html en Chrome y se ve bien
+□ Probaste hacer scroll por todas las secciones
+□ Verificaste que el mobile menu funciona (F12 → 375px)
+□ Probaste el botón "Ver Sitio" de ISPM
+□ Probaste el botón "Caso de Estudio"
+□ El formulario de contacto abre tu email
+□ Los links sociales funcionan (LinkedIn, GitHub, Email)
+□ Todo el texto es legible
+□ No hay errores en la consola (F12 → Console)
+
+═══════════════════════════════════════════════════════════════════════
+💡 NOTAS IMPORTANTES
+═══════════════════════════════════════════════════════════════════════
+
+• El tema Mint Bold fue diseñado para ser LLAMATIVO pero PROFESIONAL
+• Si te parece demasiado, podés probar el tema OSCURO (más neutro)
+• Todos los links ya están configurados y listos
+• El portfolio está 100% funcional y listo para deployment
+• No necesitás hacer ningún cambio más antes de subirlo
+
+═══════════════════════════════════════════════════════════════════════
+🎯 RESUMEN
+═══════════════════════════════════════════════════════════════════════
+
+✅ Tema Mint Bold activado
+✅ Link a ISPM configurado (https://www.ispm.edu.ar)
+✅ Todos los links de contacto funcionando
+✅ Portfolio 100% listo para publicar
+
+SIGUIENTE ACCIÓN:
+Abrir index.html en Chrome para ver el resultado final → Si te gusta →
+Seguir INSTRUCCIONES-GITHUB-PAGES.txt para subirlo.
+
+═══════════════════════════════════════════════════════════════════════

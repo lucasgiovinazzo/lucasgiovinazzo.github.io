@@ -1,0 +1,235 @@
+═══════════════════════════════════════════════════════════════════════
+🎨 CÓMO CAMBIAR LOS COLORES DEL PORTFOLIO
+═══════════════════════════════════════════════════════════════════════
+
+Tenés 3 opciones de paletas de colores disponibles:
+
+═══════════════════════════════════════════════════════════════════════
+OPCIÓN 1: PALETA CLARA (ACTUAL - DEFAULT)
+═══════════════════════════════════════════════════════════════════════
+
+✅ YA ESTÁ ACTIVA
+
+Descripción:
+• Fondo blanco/gris claro
+• Acento azul moderno (#2563eb)
+• Texto oscuro sobre fondo claro
+• Profesional, limpio, minimalista
+
+Ideal para:
+• Portafolios corporativos
+• Apariencia tradicional y profesional
+• Máxima legibilidad
+
+Preview:
+- Fondo: Blanco (#ffffff)
+- Primary: Azul (#2563eb)
+- Texto: Gris oscuro (#0f172a)
+
+═══════════════════════════════════════════════════════════════════════
+OPCIÓN 2: PALETA OSCURA (DARK MODE)
+═══════════════════════════════════════════════════════════════════════
+
+Descripción:
+• Fondo azul muy oscuro (#0f172a)
+• Acento azul brillante (#3b82f6)
+• Texto claro sobre fondo oscuro
+• Moderno, elegante, fácil para la vista
+
+Ideal para:
+• Desarrolladores/tech
+• Look moderno y sofisticado
+• Menos fatiga visual
+
+Preview:
+- Fondo: Azul oscuro (#0f172a)
+- Primary: Azul brillante (#3b82f6)
+- Texto: Gris claro (#f1f5f9)
+
+CÓMO ACTIVAR:
+───────────────
+Abrir: index.html (línea ~18)
+
+CAMBIAR:
+    <link rel="stylesheet" href="css/styles.css">
+
+POR:
+    <link rel="stylesheet" href="css/theme-dark.css">
+    <link rel="stylesheet" href="css/styles.css">
+
+⚠️ IMPORTANTE: theme-dark.css DEBE ir ANTES de styles.css
+
+También aplicar el cambio en: proyectos/ispm.html
+
+═══════════════════════════════════════════════════════════════════════
+OPCIÓN 3: PALETA MINT (DEVELOPER STYLE)
+═══════════════════════════════════════════════════════════════════════
+
+Descripción:
+• Fondo azul muy oscuro (#0a192f)
+• Acento verde menta brillante (#64ffda)
+• Texto gris azulado (#ccd6f6)
+• Estilo "developer portfolio" popular
+• Efectos glow sutiles
+
+Ideal para:
+• Portfolio de desarrollador moderno
+• Look tech/coding aesthetic
+• Destacar entre otros portfolios
+
+Preview:
+- Fondo: Azul marino oscuro (#0a192f)
+- Primary: Verde menta (#64ffda)
+- Texto: Gris azulado (#ccd6f6)
+
+Inspirado en portfolios como:
+• brittanychiang.com
+• jacekjeznach.com
+
+CÓMO ACTIVAR:
+───────────────
+Abrir: index.html (línea ~18)
+
+CAMBIAR:
+    <link rel="stylesheet" href="css/styles.css">
+
+POR:
+    <link rel="stylesheet" href="css/theme-mint.css">
+    <link rel="stylesheet" href="css/styles.css">
+
+⚠️ IMPORTANTE: theme-mint.css DEBE ir ANTES de styles.css
+
+También aplicar el cambio en: proyectos/ispm.html
+
+═══════════════════════════════════════════════════════════════════════
+📋 PASO A PASO PARA CAMBIAR TEMA
+═══════════════════════════════════════════════════════════════════════
+
+EJEMPLO: Cambiar a tema DARK
+
+1. Abrir: C:\Users\lucas\portfolio\index.html
+
+2. Buscar la línea ~18 que dice:
+   <link rel="stylesheet" href="css/styles.css">
+
+3. Agregar ENCIMA la línea del tema:
+   <link rel="stylesheet" href="css/theme-dark.css">
+
+4. Debería quedar así:
+
+   <!-- Styles -->
+   <link rel="stylesheet" href="css/theme-dark.css">
+   <link rel="stylesheet" href="css/styles.css">
+
+5. Guardar archivo
+
+6. Hacer lo mismo en: C:\Users\lucas\portfolio\proyectos\ispm.html
+   (buscar línea similar y agregar el tema)
+
+7. Abrir index.html en el navegador para ver el cambio
+
+8. Si te gusta, hacer commit:
+   git add .
+   git commit -m "style: Change to dark theme"
+   git push
+
+═══════════════════════════════════════════════════════════════════════
+🔄 VOLVER AL TEMA CLARO (DEFAULT)
+═══════════════════════════════════════════════════════════════════════
+
+Simplemente ELIMINAR la línea del tema, dejando solo:
+
+<link rel="stylesheet" href="css/styles.css">
+
+═══════════════════════════════════════════════════════════════════════
+💡 PERSONALIZAR TU PROPIO TEMA
+═══════════════════════════════════════════════════════════════════════
+
+Si querés crear tu propia paleta:
+
+1. Copiar uno de los archivos theme-*.css
+2. Renombrarlo a: theme-custom.css
+3. Editar las variables en :root
+4. Cambiar colores hexadecimales a tu gusto
+5. Importar theme-custom.css en index.html
+
+VARIABLES PRINCIPALES PARA CAMBIAR:
+
+:root {
+    --primary: #TU_COLOR_PRINCIPAL;
+    --primary-dark: #VERSION_OSCURA;
+    --primary-light: #VERSION_CLARA;
+
+    --bg-primary: #FONDO_PRINCIPAL;
+    --bg-secondary: #FONDO_SECUNDARIO;
+
+    --text-primary: #COLOR_TEXTO_PRINCIPAL;
+    --text-secondary: #COLOR_TEXTO_SECUNDARIO;
+}
+
+Herramientas útiles:
+• coolors.co - Generador de paletas
+• color.adobe.com - Adobe Color Wheel
+• mycolor.space - Gradient generator
+
+═══════════════════════════════════════════════════════════════════════
+📊 COMPARACIÓN DE TEMAS
+═══════════════════════════════════════════════════════════════════════
+
+CLARO (Default):
+✅ Máxima legibilidad
+✅ Profesional y corporativo
+✅ Familiarity para clientes
+✅ Imprime bien
+❌ Menos "tech" aesthetic
+
+OSCURO (Dark):
+✅ Moderno y elegante
+✅ Menos fatiga visual
+✅ Look tech/profesional
+✅ Destacable
+❌ Puede ser menos familiar
+
+MINT (Developer):
+✅ MUY llamativo y único
+✅ Estilo developer popular
+✅ Efectos visuales cool
+✅ Memorable
+❌ Puede ser "demasiado" para algunos clientes
+❌ Menos tradicional
+
+═══════════════════════════════════════════════════════════════════════
+🎯 RECOMENDACIÓN
+═══════════════════════════════════════════════════════════════════════
+
+Para conseguir clientes institucionales/empresas:
+→ CLARO (default) - más profesional y tradicional
+
+Para trabajos tech/startups/desarrollo:
+→ OSCURO - balance perfecto entre moderno y profesional
+
+Para destacar entre otros developers:
+→ MINT - único y memorable
+
+MI SUGERENCIA: Probá los 3, mostráselos a amigos/colegas, y elegí el
+que mejor represente tu estilo y el tipo de clientes que buscás.
+
+═══════════════════════════════════════════════════════════════════════
+✅ CHECKLIST AL CAMBIAR TEMA
+═══════════════════════════════════════════════════════════════════════
+
+Después de cambiar el tema:
+
+□ Probar en navegador (abrir index.html)
+□ Verificar que TODO se ve bien
+□ Probar mobile (F12 → responsive mode)
+□ Verificar que botones sean legibles
+□ Verificar formulario de contacto
+□ Aplicar mismo cambio en ispm.html
+□ Si te gusta, hacer commit y push
+
+═══════════════════════════════════════════════════════════════════════
+
+¡Experimentá y elegí el que más te guste! 🎨
+
+═══════════════════════════════════════════════════════════════════════

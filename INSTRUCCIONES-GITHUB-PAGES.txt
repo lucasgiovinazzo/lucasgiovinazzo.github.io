@@ -1,0 +1,244 @@
+═══════════════════════════════════════════════════════════════════════
+📚 INSTRUCCIONES COMPLETAS - DEPLOYMENT A GITHUB PAGES
+═══════════════════════════════════════════════════════════════════════
+
+🎯 OBJETIVO: Subir tu portfolio a https://lucasgiovinazzo.github.io
+
+═══════════════════════════════════════════════════════════════════════
+✅ PREREQUISITOS
+═══════════════════════════════════════════════════════════════════════
+
+1. Cuenta de GitHub con username: lucasgiovinazzo
+2. Git instalado en tu PC
+3. Los archivos del portfolio en: C:\Users\lucas\portfolio\
+
+═══════════════════════════════════════════════════════════════════════
+📋 PASO A PASO - PRIMERA VEZ (Setup Inicial)
+═══════════════════════════════════════════════════════════════════════
+
+PASO 1: Crear el repositorio en GitHub
+─────────────────────────────────────────
+
+1. Ir a: https://github.com
+2. Click en el botón verde "New" (o ir a github.com/new)
+3. Nombre del repositorio: lucasgiovinazzo.github.io
+   ⚠️ IMPORTANTE: El nombre DEBE ser EXACTAMENTE así ↑
+4. Descripción: "Portfolio personal - Desarrollador Web Full-Stack"
+5. Seleccionar: Public
+6. NO marcar "Add a README file" (ya tenemos uno)
+7. Click en "Create repository"
+
+PASO 2: Configurar Git en tu computadora
+─────────────────────────────────────────
+
+Abrir Git Bash (o PowerShell) y ejecutar:
+
+# Configurar tu nombre (solo la primera vez)
+git config --global user.name "Lucas Giovinazzo"
+
+# Configurar tu email (usa el de GitHub)
+git config --global user.email "lucas.giovinazzo@hotmail.com"
+
+PASO 3: Inicializar el repositorio local
+─────────────────────────────────────────
+
+Abrir Git Bash en la carpeta del portfolio:
+
+# Ir a la carpeta del portfolio
+cd C:\Users\lucas\portfolio
+
+# Inicializar repositorio Git
+git init
+
+# Agregar todos los archivos
+git add .
+
+# Crear el primer commit
+git commit -m "feat: Initial commit - Portfolio completo"
+
+# Renombrar la rama a main (GitHub usa 'main' ahora)
+git branch -M main
+
+# Conectar con el repositorio de GitHub
+git remote add origin https://github.com/lucasgiovinazzo/lucasgiovinazzo.github.io.git
+
+# Subir los archivos a GitHub
+git push -u origin main
+
+PASO 4: Verificar que funciona
+───────────────────────────────
+
+1. Ir a: https://github.com/lucasgiovinazzo/lucasgiovinazzo.github.io
+2. Deberías ver todos tus archivos
+3. GitHub Pages se activa AUTOMÁTICAMENTE para repos con nombre *.github.io
+4. Esperar 2-3 minutos
+5. Ir a: https://lucasgiovinazzo.github.io
+6. ¡Tu portfolio está online! 🎉
+
+═══════════════════════════════════════════════════════════════════════
+🔄 ACTUALIZACIONES FUTURAS (Cada vez que cambies algo)
+═══════════════════════════════════════════════════════════════════════
+
+Cuando quieras actualizar tu portfolio:
+
+cd C:\Users\lucas\portfolio
+
+# Ver qué archivos cambiaron
+git status
+
+# Agregar los cambios
+git add .
+
+# Crear un commit con descripción
+git commit -m "Descripción de lo que cambiaste"
+
+# Subir a GitHub
+git push
+
+# Esperar 1-2 minutos y refrescar lucasgiovinazzo.github.io
+
+═══════════════════════════════════════════════════════════════════════
+💡 EJEMPLOS DE BUENOS COMMITS
+═══════════════════════════════════════════════════════════════════════
+
+git commit -m "feat: Add new project to portfolio"
+git commit -m "fix: Correct email link in contact form"
+git commit -m "style: Update color scheme"
+git commit -m "docs: Update README with new info"
+git commit -m "refactor: Improve mobile navigation"
+
+═══════════════════════════════════════════════════════════════════════
+🌐 CONECTAR DOMINIO CUSTOM (Opcional - $12/año)
+═══════════════════════════════════════════════════════════════════════
+
+Si querés usar lucasgiovinazzo.com en vez de lucasgiovinazzo.github.io:
+
+PASO 1: Comprar dominio
+───────────────────────
+- Ir a Namecheap.com o cualquier registrar
+- Comprar: lucasgiovinazzo.com (~$12/año)
+
+PASO 2: Configurar DNS
+──────────────────────
+En el panel del dominio, agregar estos DNS records:
+
+Type    Name    Value
+A       @       185.199.108.153
+A       @       185.199.109.153
+A       @       185.199.110.153
+A       @       185.199.111.153
+CNAME   www     lucasgiovinazzo.github.io
+
+PASO 3: Configurar en GitHub
+─────────────────────────────
+1. Ir a: github.com/lucasgiovinazzo/lucasgiovinazzo.github.io/settings/pages
+2. En "Custom domain" escribir: lucasgiovinazzo.com
+3. Marcar "Enforce HTTPS"
+4. Esperar 24-48 horas para propagación DNS
+
+═══════════════════════════════════════════════════════════════════════
+🐛 SOLUCIÓN DE PROBLEMAS COMUNES
+═══════════════════════════════════════════════════════════════════════
+
+ERROR: "Repository already exists"
+SOLUCIÓN: El repositorio ya existe, saltá al Paso 3
+
+ERROR: "Permission denied"
+SOLUCIÓN: Configurá SSH o usá HTTPS con tu token de GitHub
+
+ERROR: "The page isn't working"
+SOLUCIÓN: Esperá 5 minutos, GitHub Pages tarda en activarse
+
+ERROR: "404 Not Found"
+SOLUCIÓN:
+  - Verificá que el repo se llama lucasgiovinazzo.github.io
+  - Verificá que index.html está en la raíz (no en carpeta)
+  - Ir a Settings > Pages y verificar que está habilitado
+
+═══════════════════════════════════════════════════════════════════════
+📊 VERIFICAR GITHUB PAGES STATUS
+═══════════════════════════════════════════════════════════════════════
+
+1. Ir a: github.com/lucasgiovinazzo/lucasgiovinazzo.github.io/settings/pages
+2. Deberías ver: "Your site is published at https://lucasgiovinazzo.github.io"
+3. Si dice "Your site is ready to be published":
+   - Verificar que la rama "main" tiene archivos
+   - Verificar que index.html está en la raíz
+
+═══════════════════════════════════════════════════════════════════════
+🎯 SIGUIENTE PASO: COMPARTIR
+═══════════════════════════════════════════════════════════════════════
+
+Una vez que tu portfolio esté online:
+
+1. ✅ Actualizar tu LinkedIn:
+   - Agregar URL en sección "Contact Info"
+   - Agregar como "Featured" en perfil
+   - Publicar post sobre tu nuevo portfolio
+
+2. ✅ Actualizar el footer de ISPM:
+   Cambiar el link de LinkedIn por:
+   href="https://lucasgiovinazzo.github.io"
+
+3. ✅ Agregarlo a tu firma de email
+
+4. ✅ Compartir en redes con:
+   "🚀 Acabo de lanzar mi portfolio como Desarrollador Web Full-Stack.
+
+   Incluye mi proyecto destacado: ISPM - Plataforma Institucional completa
+   con campus virtual y sistema de gestión académica.
+
+   👉 https://lucasgiovinazzo.github.io
+
+   #DesarrolloWeb #FullStack #JavaScript #Portfolio"
+
+═══════════════════════════════════════════════════════════════════════
+📝 COMANDOS ÚTILES DE GIT
+═══════════════════════════════════════════════════════════════════════
+
+# Ver el estado de tus archivos
+git status
+
+# Ver historial de commits
+git log --oneline
+
+# Ver qué archivos cambiaron
+git diff
+
+# Deshacer cambios no guardados en un archivo
+git checkout -- nombre-archivo.html
+
+# Ver la URL del repositorio remoto
+git remote -v
+
+# Ver todas las ramas
+git branch
+
+═══════════════════════════════════════════════════════════════════════
+✅ CHECKLIST FINAL
+═══════════════════════════════════════════════════════════════════════
+
+Antes de hacer el primer git push, verificá:
+
+□ Todos los links funcionan
+□ No hay links a "localhost" o rutas absolutas de tu PC
+□ Las imágenes cargan (si agregaste alguna)
+□ El formulario de contacto abre tu email
+□ El sitio se ve bien en mobile
+□ No hay errores en la consola (F12 en Chrome)
+□ Los links de LinkedIn/GitHub son correctos
+
+═══════════════════════════════════════════════════════════════════════
+🎉 ¡LISTO!
+═══════════════════════════════════════════════════════════════════════
+
+Tu portfolio estará online en: https://lucasgiovinazzo.github.io
+
+Cualquier cambio que hagas localmente, lo subís con:
+  git add .
+  git commit -m "descripción"
+  git push
+
+¡Y se actualiza automáticamente en 1-2 minutos!
+
+═══════════════════════════════════════════════════════════════════════

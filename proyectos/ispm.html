@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Caso de estudio: ISPM - Plataforma institucional desarrollada por Lucas Giovinazzo">
+    <title>ISPM - Caso de estudio</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .noise-bg::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="bg-black text-white antialiased overflow-x-hidden">
+    <!-- Noise Background -->
+    <div class="fixed inset-0 noise-bg pointer-events-none z-0"></div>
+
+    <!-- Back button -->
+    <div class="fixed top-6 left-6 z-50">
+        <a href="../index.html" class="inline-flex items-center gap-2 px-4 py-2 bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg text-sm transition-all backdrop-blur-xl">
+            <i class="fas fa-arrow-left"></i>
+            Volver
+        </a>
+    </div>
+
+    <!-- Hero -->
+    <section class="relative pt-32 pb-20 px-6 overflow-hidden">
+        <!-- Subtle glow for case study -->
+        <div class="absolute top-20 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-amber-500/10 rounded-full blur-[100px] pointer-events-none"></div>
+
+        <div class="relative z-10 max-w-4xl mx-auto">
+            <span class="inline-block px-3 py-1 bg-amber-500/10 border border-amber-500/20 text-amber-400 text-xs font-semibold rounded uppercase mb-6">
+                Caso de estudio
+            </span>
+
+            <h1 class="text-5xl md:text-6xl font-bold tracking-tight mb-6">
+                ISPM - <span class="gradient-text">Plataforma Institucional</span>
+            </h1>
+
+            <p class="text-xl text-zinc-400 mb-8 leading-relaxed">
+                Diseño y desarrollo completo de la plataforma web del Instituto Superior Perito Moreno.
+                Sitio público, campus virtual con autenticación y panel de administración.
+            </p>
+
+            <div class="flex flex-wrap gap-6 text-sm text-zinc-500 pb-8 border-b border-white/10">
+                <div class="flex items-center gap-2">
+                    <i class="fas fa-calendar text-amber-500"></i>
+                    <span>2026</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <i class="fas fa-code text-amber-500"></i>
+                    <span>164 archivos • 32 páginas</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <i class="fas fa-user text-amber-500"></i>
+                    <span>Proyecto individual</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main content -->
+    <main class="relative px-6 pb-32">
+        <div class="max-w-4xl mx-auto space-y-24">
+
+            <!-- El problema -->
+            <section>
+                <p class="text-sm text-zinc-500 mb-3 uppercase tracking-widest">Contexto</p>
+                <h2 class="text-3xl font-bold mb-6">El problema</h2>
+
+                <div class="space-y-4 text-zinc-400 leading-relaxed">
+                    <p>
+                        El instituto tenía más de 60 años de trayectoria pero su presencia web era prácticamente nula.
+                        No había forma de que los alumnos consultaran información académica online, ni un espacio para que los profesores gestionen contenidos.
+                    </p>
+                    <p>
+                        Necesitaban algo más que un sitio web. Querían una plataforma que les permitiera administrar usuarios,
+                        mostrar información institucional y tener un campus virtual donde alumnos y profesores pudieran interactuar.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Lo que construí -->
+            <section>
+                <p class="text-sm text-zinc-500 mb-3 uppercase tracking-widest">Solución</p>
+                <h2 class="text-3xl font-bold mb-6">Lo que construí</h2>
+
+                <div class="space-y-6">
+                    <div class="p-6 bg-white/[0.02] border border-white/10 rounded-xl">
+                        <h3 class="font-semibold mb-2">Sitio público</h3>
+                        <p class="text-sm text-zinc-400">
+                            Landing page con toda la info institucional: carreras, historia, contacto.
+                            Responsive desde el vamos, con diseño limpio y navegación simple.
+                        </p>
+                    </div>
+
+                    <div class="p-6 bg-white/[0.02] border border-white/10 rounded-xl">
+                        <h3 class="font-semibold mb-2">Campus virtual</h3>
+                        <p class="text-sm text-zinc-400">
+                            Sistema de login donde cada usuario ve su dashboard según su rol (alumno, profesor, admin).
+                            Los alumnos consultan materias y calificaciones. Los profesores gestionan contenido. Los admins tienen control total.
+                        </p>
+                    </div>
+
+                    <div class="p-6 bg-white/[0.02] border border-white/10 rounded-xl">
+                        <h3 class="font-semibold mb-2">Panel de administración</h3>
+                        <p class="text-sm text-zinc-400">
+                            CRUD completo de usuarios, gestión de roles y permisos.
+                            Los admins pueden crear credenciales temporales, asignar materias y controlar todo desde un solo lugar.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Stack -->
+            <section>
+                <p class="text-sm text-zinc-500 mb-3 uppercase tracking-widest">Tecnologías</p>
+                <h2 class="text-3xl font-bold mb-6">Stack técnico</h2>
+
+                <div class="space-y-6 text-zinc-400">
+                    <div>
+                        <p class="text-sm text-zinc-500 mb-3">Frontend</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1.5 bg-white/5 border border-white/10 rounded text-sm">HTML5</span>
+                            <span class="px-3 py-1.5 bg-white/5 border border-white/10 rounded text-sm">CSS3</span>
+                            <span class="px-3 py-1.5 bg-white/5 border border-white/10 rounded text-sm">JavaScript Vanilla</span>
+                        </div>
+                        <p class="text-sm text-zinc-500 mt-3">
+                            Sin frameworks. Todo vanilla para tener control total y no agregar peso innecesario.
+                        </p>
+                    </div>
+
+                    <div>
+                        <p class="text-sm text-zinc-500 mb-3">Backend</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1.5 bg-white/5 border border-white/10 rounded text-sm">Supabase</span>
+                            <span class="px-3 py-1.5 bg-white/5 border border-white/10 rounded text-sm">PostgreSQL</span>
+                            <span class="px-3 py-1.5 bg-white/5 border border-white/10 rounded text-sm">Row-Level Security</span>
+                        </div>
+                        <p class="text-sm text-zinc-500 mt-3">
+                            Supabase me dio auth, base de datos y APIs sin tener que armar un backend desde cero.
+                            Las políticas RLS de PostgreSQL manejan toda la seguridad a nivel de base de datos.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Desafíos -->
+            <section>
+                <p class="text-sm text-zinc-500 mb-3 uppercase tracking-widest">Proceso</p>
+                <h2 class="text-3xl font-bold mb-6">Los desafíos técnicos</h2>
+
+                <div class="space-y-4 text-zinc-400">
+                    <p>
+                        <strong class="text-white">Sistema de roles.</strong> Lo más complejo fue implementar permisos granulares.
+                        Un alumno no puede ver datos de otro alumno, un profesor solo ve sus materias, etc.
+                        Lo resolví con Row-Level Security directo en PostgreSQL - la seguridad está en la DB, no solo en el frontend.
+                    </p>
+                    <p>
+                        <strong class="text-white">Autenticación sin frameworks.</strong> Manejar sesiones persistentes entre páginas sin usar React o Vue.
+                        Tuve que armar un sistema de gestión de estado con localStorage/sessionStorage y validar tokens en cada request.
+                    </p>
+                    <p>
+                        <strong class="text-white">Arquitectura modular.</strong> Organizar 164 archivos para que sea mantenible.
+                        Separé todo en módulos: uno para el sitio público, otro para el campus, otro para admin.
+                        Cada módulo tiene su propio CSS y JS, sin conflictos.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Lo que aprendí -->
+            <section>
+                <p class="text-sm text-zinc-500 mb-3 uppercase tracking-widest">Aprendizajes</p>
+                <h2 class="text-3xl font-bold mb-6">Lo que me llevé</h2>
+
+                <div class="space-y-3 text-zinc-400">
+                    <p>
+                        Fue mi primer proyecto full-stack de esta envergadura. Aprendí a pensar en arquitectura desde cero,
+                        no solo "hacer que funcione" sino diseñar algo que escale y sea fácil de mantener.
+                    </p>
+                    <p>
+                        Me metí de lleno en PostgreSQL y entendí cómo funcionan las bases de datos relacionales en serio.
+                        Las políticas RLS fueron un desafío pero terminaron siendo la mejor decisión - la seguridad vive en la DB, no en el código.
+                    </p>
+                    <p>
+                        También aprendí a trabajar con Git de forma profesional, documentar código pensando en que alguien más lo va a leer,
+                        y hacer deploy a producción manejando variables de entorno y configs.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Links -->
+            <section class="pt-12 border-t border-white/10">
+                <div class="flex flex-wrap gap-4">
+                    <a href="https://www.ispm.edu.ar" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 bg-white text-black font-semibold rounded-lg hover:bg-white/90 transition-all">
+                        Ver sitio en vivo
+                        <i class="fas fa-external-link-alt text-sm"></i>
+                    </a>
+                    <a href="../index.html#proyectos" class="inline-flex items-center gap-2 px-6 py-3 bg-white/5 hover:bg-white/10 border border-white/10 font-semibold rounded-lg transition-all">
+                        Ver más proyectos
+                    </a>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-white/5 py-12 px-6">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <p class="text-sm text-zinc-600">
+                    © 2026 Lucas Giovinazzo
+                </p>
+
+                <div class="flex items-center gap-6">
+                    <a href="https://github.com/lucasgiovinazzo" target="_blank" class="text-zinc-600 hover:text-white transition-colors text-sm">
+                        GitHub
+                    </a>
+                    <a href="https://www.linkedin.com/in/lucas-giovinazzo-920b4b275/" target="_blank" class="text-zinc-600 hover:text-white transition-colors text-sm">
+                        LinkedIn
+                    </a>
+                    <a href="mailto:lucas.giovinazzo@hotmail.com" class="text-zinc-600 hover:text-white transition-colors text-sm">
+                        Email
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
