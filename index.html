@@ -103,6 +103,30 @@
             font-weight: 600;
             letter-spacing: 0.08em;
         }
+
+        /* Mobile optimizations */
+        @media (max-width: 640px) {
+            #robotCat {
+                width: 36px !important;
+                height: 36px !important;
+                left: 10px !important;
+                background-size: 108px 108px !important;
+            }
+
+            #yarnBall {
+                display: none !important;
+            }
+
+            body {
+                overflow-x: hidden;
+            }
+        }
+
+        /* Prevent horizontal scroll */
+        html, body {
+            max-width: 100%;
+            overflow-x: hidden;
+        }
     </style>
 </head>
 <body class="bg-black text-white antialiased overflow-x-hidden">
@@ -150,34 +174,34 @@
             <div id="glowOrb" style="position: absolute; width: 100%; height: 100%; background: radial-gradient(circle, rgba(245, 158, 11, 0.20) 0%, rgba(245, 158, 11, 0.10) 50%, transparent 70%); filter: blur(80px); border-radius: 50%; transition: transform 0.6s ease, filter 0.3s ease; will-change: transform;"></div>
         </div>
 
-        <div class="relative z-10 w-full pt-20">
+        <div class="relative z-10 w-full pt-20 px-6 md:px-0">
             <div class="flex items-center">
-                <div class="max-w-3xl pl-6 md:pl-12 lg:pl-20 flex-shrink-0">
+                <div class="w-full md:max-w-3xl md:pl-12 lg:pl-20 flex-shrink-0">
                     <!-- Left: Text Content -->
-                    <div class="inline-flex items-center gap-2 px-3 py-1.5 bg-white/5 border border-white/10 rounded-full text-zinc-400 mb-8 mono-label">
+                    <div class="inline-flex items-center gap-2 px-3 py-1.5 bg-white/5 border border-white/10 rounded-full text-zinc-400 mb-6 md:mb-8 mono-label text-[10px] md:text-xs">
                         <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
                         DISPONIBLE PARA PROYECTOS
                     </div>
 
-                    <h1 class="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter mb-6 leading-[1.1] font-mono">
+                    <h1 class="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter mb-4 md:mb-6 leading-[1.1] font-mono">
                         Lucas <span class="gradient-text">Giovinazzo</span>
                     </h1>
 
-                    <p class="text-xl md:text-2xl text-zinc-400 mb-4 font-mono font-medium tracking-tight">
+                    <p class="text-lg sm:text-xl md:text-2xl text-zinc-400 mb-3 md:mb-4 font-mono font-medium tracking-tight">
                         Desarrollador Web Full-Stack
                     </p>
 
-                    <p class="text-sm md:text-base text-zinc-500 max-w-xl mb-8 leading-relaxed font-mono">
+                    <p class="text-sm md:text-base text-zinc-500 max-w-xl mb-6 md:mb-8 leading-relaxed font-mono">
                         Desarrollo plataformas web para instituciones y empresas.
                         Trabajo en todo el stack, desde interfaces hasta bases de datos, o solo en lo que necesites.
                     </p>
 
-                    <div class="flex flex-wrap items-center gap-4 mb-8">
-                        <a href="#proyectos" class="group inline-flex items-center gap-2 px-6 py-3 bg-white text-black font-semibold rounded-lg hover:bg-white/90 transition-all font-mono text-sm">
+                    <div class="flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center gap-3 sm:gap-4 mb-6 md:mb-8">
+                        <a href="#proyectos" class="group inline-flex items-center justify-center gap-2 px-6 py-3 bg-white text-black font-semibold rounded-lg hover:bg-white/90 transition-all font-mono text-sm">
                             Ver proyectos
                             <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
                         </a>
-                        <a href="mailto:lucas.giovinazzo@hotmail.com" class="inline-flex items-center gap-2 px-6 py-3 bg-white/5 hover:bg-white/10 border border-white/10 font-semibold rounded-lg transition-all font-mono text-sm">
+                        <a href="mailto:lucas.giovinazzo@hotmail.com" class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-white/5 hover:bg-white/10 border border-white/10 font-semibold rounded-lg transition-all font-mono text-sm">
                             Hablemos
                         </a>
                     </div>
@@ -196,8 +220,8 @@
                     </div>
                 </div>
 
-                <!-- Right: Setup Image -->
-                <div class="flex-1 relative ml-12">
+                <!-- Right: Setup Image - Hidden on mobile -->
+                <div class="hidden lg:flex flex-1 relative ml-12">
                     <img src="images/setup.jpg?v=23" alt="Lucas Giovinazzo's setup" class="w-full h-auto max-w-none" style="border-top-left-radius: 150px; border-bottom-left-radius: 150px;">
                     <!-- Difuminación lado izquierdo -->
                     <div class="absolute inset-0" style="border-top-left-radius: 150px; border-bottom-left-radius: 150px; background: linear-gradient(to right, #000 0%, rgba(0,0,0,0.5) 8%, transparent 25%);"></div>
@@ -213,48 +237,48 @@
     </section>
 
     <!-- Proyectos -->
-    <section class="relative py-20 px-6" id="proyectos">
+    <section class="relative py-12 md:py-20 px-6" id="proyectos">
         <div class="max-w-6xl mx-auto">
-            <div class="mb-12">
-                <p class="text-zinc-600 mb-3 uppercase mono-section">Portfolio</p>
-                <h2 class="text-4xl md:text-5xl font-bold tracking-tight font-mono">Proyectos destacados</h2>
+            <div class="mb-8 md:mb-12">
+                <p class="text-zinc-600 mb-2 md:mb-3 uppercase mono-section">Portfolio</p>
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight font-mono">Proyectos destacados</h2>
             </div>
 
             <!-- Featured Project -->
             <div class="group relative bg-white/[0.02] border border-white/10 rounded-2xl overflow-hidden mb-8 hover:border-white/20 transition-all glow-hover">
                 <div class="grid md:grid-cols-2">
                     <!-- Image -->
-                    <div class="relative h-64 md:h-auto bg-gradient-to-br from-amber-500/10 to-transparent flex items-center justify-center border-b md:border-b-0 md:border-r border-white/10">
+                    <div class="relative h-48 md:h-auto bg-gradient-to-br from-amber-500/10 to-transparent flex items-center justify-center border-b md:border-b-0 md:border-r border-white/10">
                         <div class="text-center">
-                            <i class="fas fa-graduation-cap text-6xl text-amber-500/40 mb-4"></i>
-                            <p class="text-zinc-600 text-sm font-medium">ISPM Platform</p>
+                            <i class="fas fa-graduation-cap text-5xl md:text-6xl text-amber-500/40 mb-3 md:mb-4"></i>
+                            <p class="text-zinc-600 text-xs md:text-sm font-medium">ISPM Platform</p>
                         </div>
                     </div>
 
                     <!-- Content -->
-                    <div class="p-8 md:p-12">
-                        <div class="flex items-start gap-3 mb-4">
-                            <span class="px-2.5 py-1 bg-amber-500/10 border border-amber-500/20 text-amber-400 rounded uppercase mono-label">
+                    <div class="p-6 md:p-8 lg:p-12">
+                        <div class="flex items-start gap-3 mb-3 md:mb-4">
+                            <span class="px-2.5 py-1 bg-amber-500/10 border border-amber-500/20 text-amber-400 rounded uppercase mono-label text-[10px]">
                                 Featured
                             </span>
                         </div>
 
-                        <h3 class="text-2xl font-bold mb-3 font-mono">ISPM - Plataforma Institucional</h3>
+                        <h3 class="text-xl md:text-2xl font-bold mb-2 md:mb-3 font-mono">ISPM - Plataforma Institucional</h3>
 
-                        <p class="text-zinc-400 text-sm leading-relaxed mb-6 font-mono">
+                        <p class="text-zinc-400 text-xs md:text-sm leading-relaxed mb-4 md:mb-6 font-mono">
                             Plataforma completa con sitio público, campus virtual y panel admin.
                             32 páginas, autenticación, RLS en PostgreSQL y gestión de roles.
                         </p>
 
-                        <div class="flex flex-wrap gap-2 mb-8">
-                            <span class="px-3 py-1.5 bg-white/5 border border-white/10 text-zinc-400 rounded-md mono-tag">HTML5</span>
-                            <span class="px-3 py-1.5 bg-white/5 border border-white/10 text-zinc-400 rounded-md mono-tag">CSS3</span>
-                            <span class="px-3 py-1.5 bg-white/5 border border-white/10 text-zinc-400 rounded-md mono-tag">JavaScript</span>
-                            <span class="px-3 py-1.5 bg-white/5 border border-white/10 text-zinc-400 rounded-md mono-tag">PostgreSQL</span>
-                            <span class="px-3 py-1.5 bg-white/5 border border-white/10 text-zinc-400 rounded-md mono-tag">Supabase</span>
+                        <div class="flex flex-wrap gap-2 mb-6 md:mb-8">
+                            <span class="px-2.5 md:px-3 py-1 md:py-1.5 bg-white/5 border border-white/10 text-zinc-400 rounded-md mono-tag text-[10px] md:text-xs">HTML5</span>
+                            <span class="px-2.5 md:px-3 py-1 md:py-1.5 bg-white/5 border border-white/10 text-zinc-400 rounded-md mono-tag text-[10px] md:text-xs">CSS3</span>
+                            <span class="px-2.5 md:px-3 py-1 md:py-1.5 bg-white/5 border border-white/10 text-zinc-400 rounded-md mono-tag text-[10px] md:text-xs">JavaScript</span>
+                            <span class="px-2.5 md:px-3 py-1 md:py-1.5 bg-white/5 border border-white/10 text-zinc-400 rounded-md mono-tag text-[10px] md:text-xs">PostgreSQL</span>
+                            <span class="px-2.5 md:px-3 py-1 md:py-1.5 bg-white/5 border border-white/10 text-zinc-400 rounded-md mono-tag text-[10px] md:text-xs">Supabase</span>
                         </div>
 
-                        <div class="flex flex-wrap gap-3">
+                        <div class="flex flex-wrap gap-3 md:gap-4">
                             <a href="https://www.ispm.edu.ar" target="_blank" class="inline-flex items-center gap-2 text-xs text-zinc-400 hover:text-white transition-colors font-mono">
                                 Ver sitio <i class="fas fa-external-link-alt text-xs"></i>
                             </a>
@@ -281,35 +305,35 @@
     </section>
 
     <!-- Sobre mí -->
-    <section class="relative py-20 px-6" id="sobre-mi">
+    <section class="relative py-12 md:py-20 px-6" id="sobre-mi">
         <div class="max-w-6xl mx-auto">
-            <p class="text-zinc-600 uppercase mono-section" style="margin-bottom: 8px;">Sobre mí</p>
-            <h2 class="text-4xl md:text-5xl font-bold tracking-tight font-mono" style="line-height: 1; margin-bottom: 0;">Cómo trabajo</h2>
+            <p class="text-zinc-600 uppercase mono-section mb-2 md:mb-3">Sobre mí</p>
+            <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight font-mono mb-6 md:mb-8">Cómo trabajo</h2>
 
-            <div class="grid md:grid-cols-2 gap-8 items-start" style="margin-top: 16px;">
+            <div class="grid md:grid-cols-2 gap-6 md:gap-8 items-start">
                 <!-- Left: Text content -->
                 <div>
-                    <p class="text-zinc-400 leading-relaxed font-mono text-sm" style="margin-bottom: 16px;">
+                    <p class="text-zinc-400 leading-relaxed font-mono text-sm mb-4">
                         Trabajo en el desarrollo completo de plataformas web, desde la interfaz que ven los usuarios hasta
                         los sistemas de autenticación y bases de datos que hacen que todo funcione.
                     </p>
-                    <p class="text-zinc-400 leading-relaxed font-mono text-sm" style="margin-bottom: 32px;">
+                    <p class="text-zinc-400 leading-relaxed font-mono text-sm mb-6 md:mb-8">
                         Me interesa construir cosas que <span class="text-white font-medium">funcionen bien y sean fáciles de mantener a largo plazo</span>.
                         No uso frameworks por usar, prefiero tener control total del código y entender cómo funciona cada parte.
                     </p>
 
                     <!-- Skills -->
                     <div>
-                        <p class="text-zinc-600 uppercase mono-section" style="margin-bottom: 12px;">Stack</p>
+                        <p class="text-zinc-600 uppercase mono-section mb-3">Stack</p>
                         <div class="flex flex-wrap gap-2">
-                            <span class="px-3 py-1.5 bg-white/5 border border-white/10 rounded-lg hover:border-white/20 transition-colors mono-tag text-zinc-400">HTML5 & CSS3</span>
-                            <span class="px-3 py-1.5 bg-white/5 border border-white/10 rounded-lg hover:border-white/20 transition-colors mono-tag text-zinc-400">JavaScript ES6+</span>
-                            <span class="px-3 py-1.5 bg-white/5 border border-white/10 rounded-lg hover:border-white/20 transition-colors mono-tag text-zinc-400">PostgreSQL</span>
-                            <span class="px-3 py-1.5 bg-white/5 border border-white/10 rounded-lg hover:border-white/20 transition-colors mono-tag text-zinc-400">Supabase</span>
-                            <span class="px-3 py-1.5 bg-white/5 border border-white/10 rounded-lg hover:border-white/20 transition-colors mono-tag text-zinc-400">Git & GitHub</span>
-                            <span class="px-3 py-1.5 bg-white/5 border border-white/10 rounded-lg hover:border-white/20 transition-colors mono-tag text-zinc-400">Responsive Design</span>
-                            <span class="px-3 py-1.5 bg-white/5 border border-white/10 rounded-lg hover:border-white/20 transition-colors mono-tag text-zinc-400">REST APIs</span>
-                            <span class="px-3 py-1.5 bg-white/5 border border-white/10 rounded-lg hover:border-white/20 transition-colors mono-tag text-zinc-400">Row-Level Security</span>
+                            <span class="px-2.5 md:px-3 py-1 md:py-1.5 bg-white/5 border border-white/10 rounded-lg hover:border-white/20 transition-colors mono-tag text-zinc-400 text-[10px] md:text-xs">HTML5 & CSS3</span>
+                            <span class="px-2.5 md:px-3 py-1 md:py-1.5 bg-white/5 border border-white/10 rounded-lg hover:border-white/20 transition-colors mono-tag text-zinc-400 text-[10px] md:text-xs">JavaScript ES6+</span>
+                            <span class="px-2.5 md:px-3 py-1 md:py-1.5 bg-white/5 border border-white/10 rounded-lg hover:border-white/20 transition-colors mono-tag text-zinc-400 text-[10px] md:text-xs">PostgreSQL</span>
+                            <span class="px-2.5 md:px-3 py-1 md:py-1.5 bg-white/5 border border-white/10 rounded-lg hover:border-white/20 transition-colors mono-tag text-zinc-400 text-[10px] md:text-xs">Supabase</span>
+                            <span class="px-2.5 md:px-3 py-1 md:py-1.5 bg-white/5 border border-white/10 rounded-lg hover:border-white/20 transition-colors mono-tag text-zinc-400 text-[10px] md:text-xs">Git & GitHub</span>
+                            <span class="px-2.5 md:px-3 py-1 md:py-1.5 bg-white/5 border border-white/10 rounded-lg hover:border-white/20 transition-colors mono-tag text-zinc-400 text-[10px] md:text-xs">Responsive Design</span>
+                            <span class="px-2.5 md:px-3 py-1 md:py-1.5 bg-white/5 border border-white/10 rounded-lg hover:border-white/20 transition-colors mono-tag text-zinc-400 text-[10px] md:text-xs">REST APIs</span>
+                            <span class="px-2.5 md:px-3 py-1 md:py-1.5 bg-white/5 border border-white/10 rounded-lg hover:border-white/20 transition-colors mono-tag text-zinc-400 text-[10px] md:text-xs">Row-Level Security</span>
                         </div>
                     </div>
                 </div>
@@ -328,46 +352,46 @@
     </section>
 
     <!-- Contacto -->
-    <section class="relative py-20 px-6" id="contacto">
+    <section class="relative py-12 md:py-20 px-6 pb-24 md:pb-20" id="contacto">
         <div class="max-w-4xl mx-auto text-center">
-            <div class="mb-8">
-                <p class="text-zinc-600 mb-3 uppercase mono-section">Contacto</p>
-                <h2 class="text-4xl md:text-5xl font-bold tracking-tight mb-4 font-mono">
+            <div class="mb-6 md:mb-8">
+                <p class="text-zinc-600 mb-2 md:mb-3 uppercase mono-section">Contacto</p>
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-3 md:mb-4 font-mono">
                     Trabajemos juntos
                 </h2>
-                <p class="text-zinc-500 font-mono text-sm">
+                <p class="text-zinc-500 font-mono text-xs md:text-sm">
                     ¿Tenés un proyecto en mente? Hablemos.
                 </p>
             </div>
 
             <!-- Contact cards -->
-            <div class="grid md:grid-cols-3 gap-4 max-w-3xl mx-auto mb-8">
-                <a href="mailto:lucas.giovinazzo@hotmail.com" class="group p-6 bg-white/[0.02] border border-white/10 rounded-xl hover:border-white/20 transition-all">
-                    <div class="w-10 h-10 bg-white/5 border border-white/10 rounded-lg flex items-center justify-center mb-4 mx-auto group-hover:border-amber-500/50 transition-colors">
-                        <i class="fas fa-envelope text-amber-500"></i>
+            <div class="grid sm:grid-cols-3 gap-3 md:gap-4 max-w-3xl mx-auto mb-6 md:mb-8">
+                <a href="mailto:lucas.giovinazzo@hotmail.com" class="group p-4 md:p-6 bg-white/[0.02] border border-white/10 rounded-xl hover:border-white/20 transition-all">
+                    <div class="w-8 h-8 md:w-10 md:h-10 bg-white/5 border border-white/10 rounded-lg flex items-center justify-center mb-3 md:mb-4 mx-auto group-hover:border-amber-500/50 transition-colors">
+                        <i class="fas fa-envelope text-amber-500 text-sm md:text-base"></i>
                     </div>
-                    <p class="text-zinc-600 mb-1 uppercase mono-section">Email</p>
-                    <p class="text-sm font-medium group-hover:text-amber-500 transition-colors mono-tag">lucas.giovinazzo</p>
+                    <p class="text-zinc-600 mb-1 uppercase mono-section text-[9px] md:text-[10px]">Email</p>
+                    <p class="text-xs md:text-sm font-medium group-hover:text-amber-500 transition-colors mono-tag">lucas.giovinazzo</p>
                 </a>
 
-                <a href="https://www.linkedin.com/in/lucas-giovinazzo-920b4b275/" target="_blank" class="group p-6 bg-white/[0.02] border border-white/10 rounded-xl hover:border-white/20 transition-all">
-                    <div class="w-10 h-10 bg-white/5 border border-white/10 rounded-lg flex items-center justify-center mb-4 mx-auto group-hover:border-amber-500/50 transition-colors">
-                        <i class="fab fa-linkedin text-amber-500"></i>
+                <a href="https://www.linkedin.com/in/lucas-giovinazzo-920b4b275/" target="_blank" class="group p-4 md:p-6 bg-white/[0.02] border border-white/10 rounded-xl hover:border-white/20 transition-all">
+                    <div class="w-8 h-8 md:w-10 md:h-10 bg-white/5 border border-white/10 rounded-lg flex items-center justify-center mb-3 md:mb-4 mx-auto group-hover:border-amber-500/50 transition-colors">
+                        <i class="fab fa-linkedin text-amber-500 text-sm md:text-base"></i>
                     </div>
-                    <p class="text-zinc-600 mb-1 uppercase mono-section">LinkedIn</p>
-                    <p class="text-sm font-medium group-hover:text-amber-500 transition-colors mono-tag">lucas-giovinazzo</p>
+                    <p class="text-zinc-600 mb-1 uppercase mono-section text-[9px] md:text-[10px]">LinkedIn</p>
+                    <p class="text-xs md:text-sm font-medium group-hover:text-amber-500 transition-colors mono-tag">lucas-giovinazzo</p>
                 </a>
 
-                <a href="https://github.com/lucasgiovinazzo" target="_blank" class="group p-6 bg-white/[0.02] border border-white/10 rounded-xl hover:border-white/20 transition-all">
-                    <div class="w-10 h-10 bg-white/5 border border-white/10 rounded-lg flex items-center justify-center mb-4 mx-auto group-hover:border-amber-500/50 transition-colors">
-                        <i class="fab fa-github text-amber-500"></i>
+                <a href="https://github.com/lucasgiovinazzo" target="_blank" class="group p-4 md:p-6 bg-white/[0.02] border border-white/10 rounded-xl hover:border-white/20 transition-all">
+                    <div class="w-8 h-8 md:w-10 md:h-10 bg-white/5 border border-white/10 rounded-lg flex items-center justify-center mb-3 md:mb-4 mx-auto group-hover:border-amber-500/50 transition-colors">
+                        <i class="fab fa-github text-amber-500 text-sm md:text-base"></i>
                     </div>
-                    <p class="text-zinc-600 mb-1 uppercase mono-section">GitHub</p>
-                    <p class="text-sm font-medium group-hover:text-amber-500 transition-colors mono-tag">lucasgiovinazzo</p>
+                    <p class="text-zinc-600 mb-1 uppercase mono-section text-[9px] md:text-[10px]">GitHub</p>
+                    <p class="text-xs md:text-sm font-medium group-hover:text-amber-500 transition-colors mono-tag">lucasgiovinazzo</p>
                 </a>
             </div>
 
-            <a href="mailto:lucas.giovinazzo@hotmail.com?subject=Consulta%20desde%20el%20portfolio" class="inline-flex items-center gap-2 px-8 py-4 bg-white text-black font-semibold rounded-lg hover:bg-white/90 transition-all glow font-mono text-sm">
+            <a href="mailto:lucas.giovinazzo@hotmail.com?subject=Consulta%20desde%20el%20portfolio" class="inline-flex items-center justify-center gap-2 px-6 md:px-8 py-3 md:py-4 bg-white text-black font-semibold rounded-lg hover:bg-white/90 transition-all glow font-mono text-sm w-full sm:w-auto">
                 Enviar email
                 <i class="fas fa-arrow-right"></i>
             </a>
