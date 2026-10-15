@@ -3,265 +3,172 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Caso de estudio: ISPM - Plataforma institucional desarrollada por Lucas Giovinazzo">
+    <meta name="description" content="Caso de estudio: sitio institucional, inscripción a mesas de examen y campus virtual del Instituto Superior Perito Moreno.">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%276%27 fill=%27%23000%27/%3E%3Ctext x=%2716%27 y=%2722%27 font-family=%27monospace%27 font-size=%2716%27 font-weight=%27700%27 fill=%27%23F59E0B%27 text-anchor=%27middle%27%3ELG%3C/text%3E%3C/svg%3E">
     <title>ISPM - Caso de estudio</title>
 
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    },
-                }
-            }
-        }
-    </script>
-
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;700;800&display=swap" rel="stylesheet"></noscript>
+    <link rel="stylesheet" href="../css/tw.css">
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-
-        .gradient-text {
-            background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .noise-bg::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
-            pointer-events: none;
-        }
+        body { font-family: 'Inter', sans-serif; }
+        .glow { background: radial-gradient(60% 55% at 50% 45%, rgba(245,158,11,.16), transparent 70%); }
+        :focus-visible { outline: 2px solid #F59E0B; outline-offset: 3px; }
     </style>
 </head>
 <body class="bg-black text-white antialiased overflow-x-hidden">
-    <!-- Noise Background -->
-    <div class="fixed inset-0 noise-bg pointer-events-none z-0"></div>
+    <nav class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between font-mono text-sm">
+        <a href="../index.html" class="font-bold hover:text-amber-500 transition-colors" aria-label="Inicio">LG</a>
+        <a href="../index.html#proyectos" class="text-zinc-400 hover:text-white transition-colors">Todos los proyectos</a>
+    </nav>
 
-    <!-- Back button -->
-    <div class="fixed top-6 left-6 z-50">
-        <a href="../index.html" class="inline-flex items-center gap-2 px-4 py-2 bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg text-sm transition-all backdrop-blur-xl">
-            <i class="fas fa-arrow-left"></i>
-            Volver
-        </a>
-    </div>
-
-    <!-- Hero -->
-    <section class="relative pt-32 pb-20 px-6 overflow-hidden">
-        <!-- Subtle glow for case study -->
-        <div class="absolute top-20 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-amber-500/10 rounded-full blur-[100px] pointer-events-none"></div>
-
-        <div class="relative z-10 max-w-4xl mx-auto">
-            <span class="inline-block px-3 py-1 bg-amber-500/10 border border-amber-500/20 text-amber-400 text-xs font-semibold rounded uppercase mb-6">
-                Caso de estudio
-            </span>
-
-            <h1 class="text-5xl md:text-6xl font-bold tracking-tight mb-6">
-                ISPM - <span class="gradient-text">Plataforma Institucional</span>
-            </h1>
-
-            <p class="text-xl text-zinc-400 mb-8 leading-relaxed">
-                Diseño y desarrollo completo de la plataforma web del Instituto Superior Perito Moreno.
-                Sitio público, campus virtual con autenticación y panel de administración.
-            </p>
-
-            <div class="flex flex-wrap gap-6 text-sm text-zinc-500 pb-8 border-b border-white/10">
-                <div class="flex items-center gap-2">
-                    <i class="fas fa-calendar text-amber-500"></i>
-                    <span>2026</span>
-                </div>
-                <div class="flex items-center gap-2">
-                    <i class="fas fa-code text-amber-500"></i>
-                    <span>164 archivos • 32 páginas</span>
-                </div>
-                <div class="flex items-center gap-2">
-                    <i class="fas fa-user text-amber-500"></i>
-                    <span>Proyecto individual</span>
-                </div>
+    <header class="px-6 pt-10 md:pt-16">
+        <div class="max-w-5xl mx-auto">
+            <h1 class="font-mono font-extrabold tracking-tight text-5xl md:text-7xl break-words">ISPM</h1>
+            <p class="font-mono text-xl md:text-2xl text-amber-400 mt-3">Sitio, mesas de examen y campus</p>
+            <div class="mt-8 md:grid md:grid-cols-[1fr_auto] md:gap-16 items-start">
+                <p class="text-lg text-zinc-300 leading-relaxed max-w-[60ch]">Sitio y sistema académico del Instituto Superior Perito Moreno, un terciario fundado en 1964 en la Ciudad de Buenos Aires. El sitio, la inscripción y las mesas de examen están en uso; el campus virtual está en desarrollo.</p>
+                <dl class="mt-8 md:mt-0 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-1 gap-4 font-mono text-sm">
+                <div><dt class="text-zinc-400">Año</dt><dd class="mt-1 [overflow-wrap:anywhere]">2026</dd></div>
+                <div><dt class="text-zinc-400">Rol</dt><dd class="mt-1 [overflow-wrap:anywhere]">Proyecto individual, cliente real</dd></div>
+                <div><dt class="text-zinc-400">Acceso</dt><dd class="mt-1 [overflow-wrap:anywhere]"><a href="https://www.ispm.edu.ar" target="_blank" rel="noopener" class="text-amber-400 hover:text-amber-300 underline underline-offset-4">www.ispm.edu.ar</a></dd></div>
+                </dl>
             </div>
+            <figure class="relative mt-12 md:mt-16">
+                <div class="glow absolute -inset-x-6 -inset-y-16 pointer-events-none" aria-hidden="true"></div>
+                <div class="relative">
+                    <div class="rounded-xl border border-white/10 bg-zinc-900 overflow-hidden">
+                        <div class="flex items-center gap-3 px-4 h-9 border-b border-white/10 font-mono text-xs text-zinc-400">
+                            <span class="flex gap-1.5 shrink-0" aria-hidden="true"><i class="block w-2.5 h-2.5 rounded-full bg-white/15"></i><i class="block w-2.5 h-2.5 rounded-full bg-white/15"></i><i class="block w-2.5 h-2.5 rounded-full bg-white/15"></i></span>
+                            <span class="truncate">ispm.edu.ar</span>
+                        </div>
+                        <img src="../images/proyectos/ispm-home.webp" width="1200" height="750" fetchpriority="high" alt="Portada del sitio del Instituto Superior Perito Moreno" class="block w-full h-auto">
+                    </div>
+                </div>
+                <figcaption class="relative text-sm text-zinc-400 mt-3">Portada de ispm.edu.ar.</figcaption>
+            </figure>
         </div>
-    </section>
+    </header>
 
-    <!-- Main content -->
-    <main class="relative px-6 pb-32">
-        <div class="max-w-4xl mx-auto space-y-24">
+    <main class="px-6 mt-14 md:mt-20">
+        <div class="max-w-5xl mx-auto">
 
-            <!-- El problema -->
-            <section>
-                <p class="text-sm text-zinc-500 mb-3 uppercase tracking-widest">Contexto</p>
-                <h2 class="text-3xl font-bold mb-6">El problema</h2>
-
-                <div class="space-y-4 text-zinc-400 leading-relaxed">
-                    <p>
-                        El instituto tenía más de 60 años de trayectoria pero su presencia web era prácticamente nula.
-                        No había forma de que los alumnos consultaran información académica online, ni un espacio para que los profesores gestionen contenidos.
-                    </p>
-                    <p>
-                        Necesitaban algo más que un sitio web. Querían una plataforma que les permitiera administrar usuarios,
-                        mostrar información institucional y tener un campus virtual donde alumnos y profesores pudieran interactuar.
-                    </p>
-                </div>
-            </section>
-
-            <!-- Lo que construí -->
-            <section>
-                <p class="text-sm text-zinc-500 mb-3 uppercase tracking-widest">Solución</p>
-                <h2 class="text-3xl font-bold mb-6">Lo que construí</h2>
-
-                <div class="space-y-6">
-                    <div class="p-6 bg-white/[0.02] border border-white/10 rounded-xl">
-                        <h3 class="font-semibold mb-2">Sitio público</h3>
-                        <p class="text-sm text-zinc-400">
-                            Landing page con toda la info institucional: carreras, historia, contacto.
-                            Responsive desde el vamos, con diseño limpio y navegación simple.
-                        </p>
-                    </div>
-
-                    <div class="p-6 bg-white/[0.02] border border-white/10 rounded-xl">
-                        <h3 class="font-semibold mb-2">Campus virtual</h3>
-                        <p class="text-sm text-zinc-400">
-                            Sistema de login donde cada usuario ve su dashboard según su rol (alumno, profesor, admin).
-                            Los alumnos consultan materias y calificaciones. Los profesores gestionan contenido. Los admins tienen control total.
-                        </p>
-                    </div>
-
-                    <div class="p-6 bg-white/[0.02] border border-white/10 rounded-xl">
-                        <h3 class="font-semibold mb-2">Panel de administración</h3>
-                        <p class="text-sm text-zinc-400">
-                            CRUD completo de usuarios, gestión de roles y permisos.
-                            Los admins pueden crear credenciales temporales, asignar materias y controlar todo desde un solo lugar.
-                        </p>
+            <section class="md:grid md:grid-cols-[13rem_1fr] md:gap-10 py-14 md:py-20 border-t border-white/10">
+                <h2 class="font-mono text-xl md:text-2xl font-bold mb-6 md:mb-0">El problema</h2>
+                <div class="max-w-[65ch]">
+                    <div class="space-y-4 text-zinc-300 leading-relaxed">
+                    <p>El instituto tenía más de 60 años de trayectoria pero su presencia web era prácticamente nula. No había forma de que los alumnos consultaran información académica online, ni un espacio para que los profesores gestionen contenidos.</p>
+                    <p>Necesitaban un sitio que explique las carreras y reciba inscripciones, y un sistema propio para mesas de examen y cursada: alumnos, profesores y administración, cada uno viendo solo lo suyo.</p>
                     </div>
                 </div>
             </section>
 
-            <!-- Stack -->
-            <section>
-                <p class="text-sm text-zinc-500 mb-3 uppercase tracking-widest">Tecnologías</p>
-                <h2 class="text-3xl font-bold mb-6">Stack técnico</h2>
 
-                <div class="space-y-6 text-zinc-400">
-                    <div>
-                        <p class="text-sm text-zinc-500 mb-3">Frontend</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-3 py-1.5 bg-white/5 border border-white/10 rounded text-sm">HTML5</span>
-                            <span class="px-3 py-1.5 bg-white/5 border border-white/10 rounded text-sm">CSS3</span>
-                            <span class="px-3 py-1.5 bg-white/5 border border-white/10 rounded text-sm">JavaScript Vanilla</span>
+            <section class="md:grid md:grid-cols-[13rem_1fr] md:gap-10 py-14 md:py-20 border-t border-white/10">
+                <h2 class="font-mono text-xl md:text-2xl font-bold mb-6 md:mb-0">Qué hice</h2>
+                <div class="max-w-[65ch]">
+                    <dl>
+                        <div class="py-5 first:pt-0 border-b border-white/10 last:border-0">
+                            <dt class="font-mono font-bold">Sitio institucional</dt>
+                            <dd class="mt-2 text-zinc-400 leading-relaxed">Portada con video, las tres carreras con título, resolución y plan de estudios, ubicación y contacto. Los formularios de inscripción y consulta llegan por mail.</dd>
                         </div>
-                        <p class="text-sm text-zinc-500 mt-3">
-                            Sin frameworks. Todo vanilla para tener control total y no agregar peso innecesario.
-                        </p>
-                    </div>
-
-                    <div>
-                        <p class="text-sm text-zinc-500 mb-3">Backend</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-3 py-1.5 bg-white/5 border border-white/10 rounded text-sm">Supabase</span>
-                            <span class="px-3 py-1.5 bg-white/5 border border-white/10 rounded text-sm">PostgreSQL</span>
-                            <span class="px-3 py-1.5 bg-white/5 border border-white/10 rounded text-sm">Row-Level Security</span>
+                        <div class="py-5 first:pt-0 border-b border-white/10 last:border-0">
+                            <dt class="font-mono font-bold">Inscripción a mesas de examen</dt>
+                            <dd class="mt-2 text-zinc-400 leading-relaxed">El alumno entra con su mail o DNI, elige las mesas y se lleva una constancia. Administración carga períodos y mesas y genera las actas.</dd>
                         </div>
-                        <p class="text-sm text-zinc-500 mt-3">
-                            Supabase me dio auth, base de datos y APIs sin tener que armar un backend desde cero.
-                            Las políticas RLS de PostgreSQL manejan toda la seguridad a nivel de base de datos.
-                        </p>
+                        <div class="py-5 first:pt-0 border-b border-white/10 last:border-0">
+                            <dt class="font-mono font-bold">Campus virtual</dt>
+                            <dd class="mt-2 text-zinc-400 leading-relaxed">Alumno, profesor y administración en un mismo campus: materias, calificaciones, cronograma, mensajes, material de cursada y entregas. El alta de usuarios se puede hacer de a uno o con una planilla.</dd>
+                        </div>
+                    </dl>
+                </div>
+            </section>
+
+
+            <section class="py-14 md:py-20 border-t border-white/10">
+                <h2 class="font-mono text-xl md:text-2xl font-bold mb-8">Más pantallas</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+                    <figure class="min-w-0">
+                    <div class="rounded-xl border border-white/10 bg-zinc-900 overflow-hidden">
+                        <div class="flex items-center gap-3 px-4 h-9 border-b border-white/10 font-mono text-xs text-zinc-400">
+                            <span class="flex gap-1.5 shrink-0" aria-hidden="true"><i class="block w-2.5 h-2.5 rounded-full bg-white/15"></i><i class="block w-2.5 h-2.5 rounded-full bg-white/15"></i><i class="block w-2.5 h-2.5 rounded-full bg-white/15"></i></span>
+                            <span class="truncate">ispm.edu.ar / carreras / guia-turismo.html</span>
+                        </div>
+                        <img src="../images/proyectos/ispm-carrera.webp" width="1200" height="750" loading="lazy" alt="Página de la carrera Guía de Turismo con título y resolución" class="block w-full h-auto">
+                    </div>
+                        <figcaption class="text-sm text-zinc-400 mt-3 leading-relaxed">Cada carrera con su título oficial, resolución y plan de estudios.</figcaption>
+                    </figure>
+                    <figure class="min-w-0">
+                    <div class="rounded-xl border border-white/10 bg-zinc-900 overflow-hidden">
+                        <div class="flex items-center gap-3 px-4 h-9 border-b border-white/10 font-mono text-xs text-zinc-400">
+                            <span class="flex gap-1.5 shrink-0" aria-hidden="true"><i class="block w-2.5 h-2.5 rounded-full bg-white/15"></i><i class="block w-2.5 h-2.5 rounded-full bg-white/15"></i><i class="block w-2.5 h-2.5 rounded-full bg-white/15"></i></span>
+                            <span class="truncate">ispm.edu.ar / mesas-examen.html</span>
+                        </div>
+                        <img src="../images/proyectos/ispm-mesas.webp" width="1200" height="750" loading="lazy" alt="Inscripción a mesas de examen en tres pasos" class="block w-full h-auto">
+                    </div>
+                        <figcaption class="text-sm text-zinc-400 mt-3 leading-relaxed">Mesas de examen: entrar, elegir mesas y constancia.</figcaption>
+                    </figure>
+                </div>
+            </section>
+
+
+            <section class="md:grid md:grid-cols-[13rem_1fr] md:gap-10 py-14 md:py-20 border-t border-white/10">
+                <h2 class="font-mono text-xl md:text-2xl font-bold mb-6 md:mb-0">Stack</h2>
+                <div class="max-w-[65ch]">
+                    <div class="space-y-8">
+                    <div>
+                        <h3 class="text-zinc-400 text-sm mb-3">Frontend</h3>
+                        <ul class="flex flex-wrap gap-2 font-mono text-sm">
+                            <li class="px-3 py-1 border border-white/15 rounded">HTML</li> <li class="px-3 py-1 border border-white/15 rounded">CSS</li> <li class="px-3 py-1 border border-white/15 rounded">JavaScript vanilla</li>
+                        </ul>
+                        <p class="text-zinc-400 mt-3 leading-relaxed">Sin frameworks ni build: se sube tal cual al hosting.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-zinc-400 text-sm mb-3">Backend</h3>
+                        <ul class="flex flex-wrap gap-2 font-mono text-sm">
+                            <li class="px-3 py-1 border border-white/15 rounded">PHP</li> <li class="px-3 py-1 border border-white/15 rounded">MySQL / MariaDB</li> <li class="px-3 py-1 border border-white/15 rounded">PHPMailer</li>
+                        </ul>
+                        <p class="text-zinc-400 mt-3 leading-relaxed">Una API propia en PHP sobre el hosting cPanel del instituto. Los mails salen por el SMTP del mismo hosting.</p>
+                    </div>
                     </div>
                 </div>
             </section>
 
-            <!-- Desafíos -->
-            <section>
-                <p class="text-sm text-zinc-500 mb-3 uppercase tracking-widest">Proceso</p>
-                <h2 class="text-3xl font-bold mb-6">Los desafíos técnicos</h2>
 
-                <div class="space-y-4 text-zinc-400">
-                    <p>
-                        <strong class="text-white">Sistema de roles.</strong> Lo más complejo fue implementar permisos granulares.
-                        Un alumno no puede ver datos de otro alumno, un profesor solo ve sus materias, etc.
-                        Lo resolví con Row-Level Security directo en PostgreSQL - la seguridad está en la DB, no solo en el frontend.
-                    </p>
-                    <p>
-                        <strong class="text-white">Autenticación sin frameworks.</strong> Manejar sesiones persistentes entre páginas sin usar React o Vue.
-                        Tuve que armar un sistema de gestión de estado con localStorage/sessionStorage y validar tokens en cada request.
-                    </p>
-                    <p>
-                        <strong class="text-white">Arquitectura modular.</strong> Organizar 164 archivos para que sea mantenible.
-                        Separé todo en módulos: uno para el sitio público, otro para el campus, otro para admin.
-                        Cada módulo tiene su propio CSS y JS, sin conflictos.
-                    </p>
+            <section class="md:grid md:grid-cols-[13rem_1fr] md:gap-10 py-14 md:py-20 border-t border-white/10">
+                <h2 class="font-mono text-xl md:text-2xl font-bold mb-6 md:mb-0">Decisiones</h2>
+                <div class="max-w-[65ch]">
+                    <div class="space-y-5 text-zinc-400 leading-relaxed">
+                    <p><strong class="font-mono text-white">De Supabase a MySQL.</strong> El campus empezó en Supabase. Lo migré entero a MySQL y una API en PHP para que todo viva en el hosting del instituto, con un chequeo que confirma que ya no queda nada apuntando a Supabase.</p>
+                    <p><strong class="font-mono text-white">La seguridad vive en el servidor.</strong> MySQL no tiene las políticas por fila de Postgres, así que ninguna pantalla habla con la base: cada endpoint exige sesión y rol, y el usuario sale siempre de la sesión del servidor, nunca de lo que manda el navegador.</p>
+                    <p><strong class="font-mono text-white">Nadie tuvo que cambiar su contraseña.</strong> Los hashes bcrypt de Supabase se validan tal cual en PHP y se rehacen con un costo más alto la primera vez que cada uno entra.</p>
+                    <p><strong class="font-mono text-white">Archivos solo para quien corresponde.</strong> Antes cualquiera con el link bajaba el material. Ahora cada descarga verifica que quien la pide curse la materia, la dicte o sea de administración.</p>
+                    </div>
                 </div>
             </section>
 
-            <!-- Lo que aprendí -->
-            <section>
-                <p class="text-sm text-zinc-500 mb-3 uppercase tracking-widest">Aprendizajes</p>
-                <h2 class="text-3xl font-bold mb-6">Lo que me llevé</h2>
-
-                <div class="space-y-3 text-zinc-400">
-                    <p>
-                        Fue mi primer proyecto full-stack de esta envergadura. Aprendí a pensar en arquitectura desde cero,
-                        no solo "hacer que funcione" sino diseñar algo que escale y sea fácil de mantener.
-                    </p>
-                    <p>
-                        Me metí de lleno en PostgreSQL y entendí cómo funcionan las bases de datos relacionales en serio.
-                        Las políticas RLS fueron un desafío pero terminaron siendo la mejor decisión - la seguridad vive en la DB, no en el código.
-                    </p>
-                    <p>
-                        También aprendí a trabajar con Git de forma profesional, documentar código pensando en que alguien más lo va a leer,
-                        y hacer deploy a producción manejando variables de entorno y configs.
-                    </p>
+            <section class="py-14 md:py-20 border-t border-white/10 md:grid md:grid-cols-[13rem_1fr] md:gap-10">
+                <h2 class="font-mono text-xl md:text-2xl font-bold mb-4 md:mb-0">Verlo andando</h2>
+                <div>
+                    <p class="text-zinc-300 mb-6">El sitio y la inscripción a mesas están publicados. El campus todavía está en desarrollo.</p>
+                    <div class="flex flex-wrap gap-3">
+                        <a href="https://www.ispm.edu.ar" target="_blank" rel="noopener" class="inline-flex items-center px-5 py-3 rounded-lg font-mono text-sm font-bold transition-colors bg-white text-black hover:bg-amber-400">Abrir ispm.edu.ar</a>
+                        <a href="../index.html#proyectos" class="inline-flex items-center px-5 py-3 rounded-lg font-mono text-sm font-bold transition-colors border border-white/15 hover:border-white/40">Ver otros proyectos</a>
+                    </div>
                 </div>
             </section>
-
-            <!-- Links -->
-            <section class="pt-12 border-t border-white/10">
-                <div class="flex flex-wrap gap-4">
-                    <a href="https://www.ispm.edu.ar" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 bg-white text-black font-semibold rounded-lg hover:bg-white/90 transition-all">
-                        Ver sitio en vivo
-                        <i class="fas fa-external-link-alt text-sm"></i>
-                    </a>
-                    <a href="../index.html#proyectos" class="inline-flex items-center gap-2 px-6 py-3 bg-white/5 hover:bg-white/10 border border-white/10 font-semibold rounded-lg transition-all">
-                        Ver más proyectos
-                    </a>
-                </div>
-            </section>
-
         </div>
     </main>
 
-    <!-- Footer -->
-    <footer class="border-t border-white/5 py-12 px-6">
-        <div class="max-w-6xl mx-auto">
-            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
-                <p class="text-sm text-zinc-600">
-                    © 2026 Lucas Giovinazzo
-                </p>
-
-                <div class="flex items-center gap-6">
-                    <a href="https://github.com/lucasgiovinazzo" target="_blank" class="text-zinc-600 hover:text-white transition-colors text-sm">
-                        GitHub
-                    </a>
-                    <a href="https://www.linkedin.com/in/lucas-giovinazzo-920b4b275/" target="_blank" class="text-zinc-600 hover:text-white transition-colors text-sm">
-                        LinkedIn
-                    </a>
-                    <a href="mailto:lucas.giovinazzo@hotmail.com" class="text-zinc-600 hover:text-white transition-colors text-sm">
-                        Email
-                    </a>
-                </div>
+    <footer class="border-t border-white/10 py-10 px-6 font-mono text-sm">
+        <div class="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+            <p class="text-zinc-400">© 2026 Lucas Giovinazzo</p>
+            <div class="flex items-center gap-6">
+                <a href="https://github.com/lucasgiovinazzo" target="_blank" rel="noopener" class="text-zinc-400 hover:text-white transition-colors">GitHub</a>
+                <a href="https://www.linkedin.com/in/lucas-giovinazzo-920b4b275/" target="_blank" rel="noopener" class="text-zinc-400 hover:text-white transition-colors">LinkedIn</a>
+                <a href="mailto:lucas.giovinazzo@hotmail.com" class="text-zinc-400 hover:text-white transition-colors">Email</a>
             </div>
         </div>
     </footer>

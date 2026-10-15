@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Caso de estudio: demo navegable de un campus virtual estilo ISPM para Web Enterprises.">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%276%27 fill=%27%23000%27/%3E%3Ctext x=%2716%27 y=%2722%27 font-family=%27monospace%27 font-size=%2716%27 font-weight=%27700%27 fill=%27%23F59E0B%27 text-anchor=%27middle%27%3ELG%3C/text%3E%3C/svg%3E">
+    <title>Demo educativa - Web Enterprises - Caso de estudio</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;700;800&display=swap" rel="stylesheet"></noscript>
+    <link rel="stylesheet" href="../css/tw.css">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .glow { background: radial-gradient(60% 55% at 50% 45%, rgba(245,158,11,.16), transparent 70%); }
+        :focus-visible { outline: 2px solid #F59E0B; outline-offset: 3px; }
+    </style>
+</head>
+<body class="bg-black text-white antialiased overflow-x-hidden">
+    <nav class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between font-mono text-sm">
+        <a href="../index.html" class="font-bold hover:text-amber-500 transition-colors" aria-label="Inicio">LG</a>
+        <a href="../index.html#proyectos" class="text-zinc-400 hover:text-white transition-colors">Todos los proyectos</a>
+    </nav>
+
+    <header class="px-6 pt-10 md:pt-16">
+        <div class="max-w-5xl mx-auto">
+            <h1 class="font-mono font-extrabold tracking-tight text-5xl md:text-7xl break-words">Demo educativa</h1>
+            <p class="font-mono text-xl md:text-2xl text-amber-400 mt-3">Un campus estilo ISPM para mostrar</p>
+            <div class="mt-8 md:grid md:grid-cols-[1fr_auto] md:gap-16 items-start">
+                <p class="text-lg text-zinc-300 leading-relaxed max-w-[60ch]">Un instituto ficticio, completo y navegable, para mostrarle a otras instituciones cómo sería su sitio y su campus. Está construido sobre el código real de ISPM.</p>
+                <dl class="mt-8 md:mt-0 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-1 gap-4 font-mono text-sm">
+                <div><dt class="text-zinc-400">Año</dt><dd class="mt-1 [overflow-wrap:anywhere]">2026</dd></div>
+                <div><dt class="text-zinc-400">Rol</dt><dd class="mt-1 [overflow-wrap:anywhere]">Proyecto propio</dd></div>
+                <div><dt class="text-zinc-400">Acceso</dt><dd class="mt-1 [overflow-wrap:anywhere]"><span class="text-amber-400">Demo a pedido</span></dd></div>
+                </dl>
+            </div>
+            <figure class="relative mt-12 md:mt-16">
+                <div class="glow absolute -inset-x-6 -inset-y-16 pointer-events-none" aria-hidden="true"></div>
+                <div class="relative">
+                    <div class="rounded-xl border border-white/10 bg-zinc-900 overflow-hidden">
+                        <div class="flex items-center gap-3 px-4 h-9 border-b border-white/10 font-mono text-xs text-zinc-400">
+                            <span class="flex gap-1.5 shrink-0" aria-hidden="true"><i class="block w-2.5 h-2.5 rounded-full bg-white/15"></i><i class="block w-2.5 h-2.5 rounded-full bg-white/15"></i><i class="block w-2.5 h-2.5 rounded-full bg-white/15"></i></span>
+                            <span class="truncate">demos / educacion / index.html</span>
+                        </div>
+                        <img src="../images/proyectos/we-campus-home.webp" width="1200" height="750" fetchpriority="high" alt="Portada del instituto ficticio Horizonte" class="block w-full h-auto">
+                    </div>
+                </div>
+                <figcaption class="relative text-sm text-zinc-400 mt-3">Portada del instituto ficticio.</figcaption>
+            </figure>
+        </div>
+    </header>
+
+    <main class="px-6 mt-14 md:mt-20">
+        <div class="max-w-5xl mx-auto">
+
+            <section class="md:grid md:grid-cols-[13rem_1fr] md:gap-10 py-14 md:py-20 border-t border-white/10">
+                <h2 class="font-mono text-xl md:text-2xl font-bold mb-6 md:mb-0">El problema</h2>
+                <div class="max-w-[65ch]">
+                    <div class="space-y-4 text-zinc-300 leading-relaxed">
+                    <p>Para vender un campus virtual a otra institución no podía mostrar el de ISPM: tiene datos reales de alumnos y docentes y requiere usuarios.</p>
+                    <p>Necesitaba una demo que se pudiera recorrer sin login, con la misma interfaz que funciona en producción, y que dejara claro en cada pantalla que los datos son de ejemplo.</p>
+                    </div>
+                </div>
+            </section>
+
+
+            <section class="md:grid md:grid-cols-[13rem_1fr] md:gap-10 py-14 md:py-20 border-t border-white/10">
+                <h2 class="font-mono text-xl md:text-2xl font-bold mb-6 md:mb-0">Qué hice</h2>
+                <div class="max-w-[65ch]">
+                    <dl>
+                        <div class="py-5 first:pt-0 border-b border-white/10 last:border-0">
+                            <dt class="font-mono font-bold">Sitio institucional</dt>
+                            <dd class="mt-2 text-zinc-400 leading-relaxed">Portada con video, tres carreras con plan de estudios y salida laboral, inscripción con requisitos y documentación de ejemplo.</dd>
+                        </div>
+                        <div class="py-5 first:pt-0 border-b border-white/10 last:border-0">
+                            <dt class="font-mono font-bold">Campus del alumno</dt>
+                            <dd class="mt-2 text-zinc-400 leading-relaxed">Nueve pantallas: inicio con la jornada del día, materias con búsqueda y filtros, detalle con unidades y entregas, cronograma, calificaciones, mensajes, perfil, soporte y documentación.</dd>
+                        </div>
+                        <div class="py-5 first:pt-0 border-b border-white/10 last:border-0">
+                            <dt class="font-mono font-bold">Vista docente y administración</dt>
+                            <dd class="mt-2 text-zinc-400 leading-relaxed">Planilla de notas y devoluciones del profesor; listado de usuarios, alta masiva desde planilla, carreras y materias, horarios, mesas y actas para administración.</dd>
+                        </div>
+                        <div class="py-5 first:pt-0 border-b border-white/10 last:border-0">
+                            <dt class="font-mono font-bold">Reutilizar antes que reescribir</dt>
+                            <dd class="mt-2 text-zinc-400 leading-relaxed">Los estilos y varias reglas (notas, fechas, filtros, paginación, parser de planillas) se copiaron del código de ISPM con sus cuerpos originales. Lo adaptado está separado y documentado.</dd>
+                        </div>
+                    </dl>
+                </div>
+            </section>
+
+
+            <section class="py-14 md:py-20 border-t border-white/10">
+                <h2 class="font-mono text-xl md:text-2xl font-bold mb-8">Más pantallas</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+                    <figure class="min-w-0">
+                    <div class="rounded-xl border border-white/10 bg-zinc-900 overflow-hidden">
+                        <div class="flex items-center gap-3 px-4 h-9 border-b border-white/10 font-mono text-xs text-zinc-400">
+                            <span class="flex gap-1.5 shrink-0" aria-hidden="true"><i class="block w-2.5 h-2.5 rounded-full bg-white/15"></i><i class="block w-2.5 h-2.5 rounded-full bg-white/15"></i><i class="block w-2.5 h-2.5 rounded-full bg-white/15"></i></span>
+                            <span class="truncate">demos / educacion / campus.html</span>
+                        </div>
+                        <img src="../images/proyectos/we-campus-alumno.webp" width="1200" height="750" loading="lazy" alt="Inicio del campus del alumno con las clases del día" class="block w-full h-auto">
+                    </div>
+                        <figcaption class="text-sm text-zinc-400 mt-3 leading-relaxed">Inicio del campus: clases del día y novedades. Datos ficticios.</figcaption>
+                    </figure>
+                    <figure class="min-w-0">
+                    <div class="rounded-xl border border-white/10 bg-zinc-900 overflow-hidden">
+                        <div class="flex items-center gap-3 px-4 h-9 border-b border-white/10 font-mono text-xs text-zinc-400">
+                            <span class="flex gap-1.5 shrink-0" aria-hidden="true"><i class="block w-2.5 h-2.5 rounded-full bg-white/15"></i><i class="block w-2.5 h-2.5 rounded-full bg-white/15"></i><i class="block w-2.5 h-2.5 rounded-full bg-white/15"></i></span>
+                            <span class="truncate">demos / educacion / campus-materias.html</span>
+                        </div>
+                        <img src="../images/proyectos/we-campus-materia.webp" width="1200" height="750" loading="lazy" alt="Listado de materias con filtros por estado" class="block w-full h-auto">
+                    </div>
+                        <figcaption class="text-sm text-zinc-400 mt-3 leading-relaxed">Materias con búsqueda y filtros por estado. Datos ficticios.</figcaption>
+                    </figure>
+                </div>
+            </section>
+
+
+            <section class="md:grid md:grid-cols-[13rem_1fr] md:gap-10 py-14 md:py-20 border-t border-white/10">
+                <h2 class="font-mono text-xl md:text-2xl font-bold mb-6 md:mb-0">Stack</h2>
+                <div class="max-w-[65ch]">
+                    <div class="space-y-8">
+                    <div>
+                        <h3 class="text-zinc-400 text-sm mb-3">Demo</h3>
+                        <ul class="flex flex-wrap gap-2 font-mono text-sm">
+                            <li class="px-3 py-1 border border-white/15 rounded">HTML</li> <li class="px-3 py-1 border border-white/15 rounded">CSS</li> <li class="px-3 py-1 border border-white/15 rounded">JavaScript (ES modules)</li>
+                        </ul>
+                        <p class="text-zinc-400 mt-3 leading-relaxed">Estática, sin backend: entregas, mensajes y filtros se descartan al recargar.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-zinc-400 text-sm mb-3">Sitio comercial</h3>
+                        <ul class="flex flex-wrap gap-2 font-mono text-sm">
+                            <li class="px-3 py-1 border border-white/15 rounded">Vite</li> <li class="px-3 py-1 border border-white/15 rounded">React</li> <li class="px-3 py-1 border border-white/15 rounded">TypeScript</li> <li class="px-3 py-1 border border-white/15 rounded">Node test runner</li>
+                        </ul>
+                        <p class="text-zinc-400 mt-3 leading-relaxed">React solo se usa para prerenderizar: en producción las páginas son HTML con enlaces nativos.</p>
+                    </div>
+                    </div>
+                </div>
+            </section>
+
+
+            <section class="md:grid md:grid-cols-[13rem_1fr] md:gap-10 py-14 md:py-20 border-t border-white/10">
+                <h2 class="font-mono text-xl md:text-2xl font-bold mb-6 md:mb-0">Decisiones</h2>
+                <div class="max-w-[65ch]">
+                    <div class="space-y-5 text-zinc-400 leading-relaxed">
+                    <p><strong class="font-mono text-white">Datos ficticios por diseño.</strong> Perfil fijo, sin campos de contacto ni DNI, sin abrir archivos reales del equipo. La demo no aparenta tener login, permisos ni persistencia que no tiene.</p>
+                    <p><strong class="font-mono text-white">Pruebas sobre la demo.</strong> Tests de campus, inscripción, mesas, administración y alta masiva, más una prueba que limita qué archivos se publican.</p>
+                    <p><strong class="font-mono text-white">Privada hasta el lanzamiento.</strong> Por eso acá no hay link: la muestro en una llamada o te paso acceso.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="py-14 md:py-20 border-t border-white/10 md:grid md:grid-cols-[13rem_1fr] md:gap-10">
+                <h2 class="font-mono text-xl md:text-2xl font-bold mb-4 md:mb-0">Verlo andando</h2>
+                <div>
+                    <p class="text-zinc-300 mb-6">No tiene link público. Te lo muestro en una llamada o te paso acceso.</p>
+                    <div class="flex flex-wrap gap-3">
+                        <a href="mailto:lucas.giovinazzo@hotmail.com?subject=Demo educativa - Web Enterprises%20-%20demo" class="inline-flex items-center px-5 py-3 rounded-lg font-mono text-sm font-bold transition-colors bg-white text-black hover:bg-amber-400">Pedir una demo</a>
+                        <a href="../index.html#proyectos" class="inline-flex items-center px-5 py-3 rounded-lg font-mono text-sm font-bold transition-colors border border-white/15 hover:border-white/40">Ver otros proyectos</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="border-t border-white/10 py-10 px-6 font-mono text-sm">
+        <div class="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+            <p class="text-zinc-400">© 2026 Lucas Giovinazzo</p>
+            <div class="flex items-center gap-6">
+                <a href="https://github.com/lucasgiovinazzo" target="_blank" rel="noopener" class="text-zinc-400 hover:text-white transition-colors">GitHub</a>
+                <a href="https://www.linkedin.com/in/lucas-giovinazzo-920b4b275/" target="_blank" rel="noopener" class="text-zinc-400 hover:text-white transition-colors">LinkedIn</a>
+                <a href="mailto:lucas.giovinazzo@hotmail.com" class="text-zinc-400 hover:text-white transition-colors">Email</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
