@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Caso de estudio: simulador con lecciones y control en vivo de robots por bloques para Robótica UAI.">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%276%27 fill=%27%23000%27/%3E%3Ctext x=%2716%27 y=%2722%27 font-family=%27monospace%27 font-size=%2716%27 font-weight=%27700%27 fill=%27%23F59E0B%27 text-anchor=%27middle%27%3ELG%3C/text%3E%3C/svg%3E">
+    <title>Robots PaperOne XXI - Caso de estudio</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;700;800&display=swap" rel="stylesheet"></noscript>
+    <link rel="stylesheet" href="../css/tw.css">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .glow { background: radial-gradient(60% 55% at 50% 45%, rgba(245,158,11,.16), transparent 70%); }
+        :focus-visible { outline: 2px solid #F59E0B; outline-offset: 3px; }
+    </style>
+</head>
+<body class="bg-black text-white antialiased overflow-x-hidden">
+    <nav class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between font-mono text-sm">
+        <a href="../index.html" class="font-bold hover:text-amber-500 transition-colors" aria-label="Inicio">LG</a>
+        <a href="../index.html#proyectos" class="text-zinc-400 hover:text-white transition-colors">Todos los proyectos</a>
+    </nav>
+
+    <header class="px-6 pt-10 md:pt-16">
+        <div class="max-w-5xl mx-auto">
+            <h1 class="font-mono font-extrabold tracking-tight text-5xl md:text-7xl break-words">PaperOne XXI</h1>
+            <p class="font-mono text-xl md:text-2xl text-amber-400 mt-3">Programar robots desde el navegador</p>
+            <div class="mt-8 md:grid md:grid-cols-[1fr_auto] md:gap-16 items-start">
+                <p class="text-lg text-zinc-300 leading-relaxed max-w-[60ch]">Un simulador con lecciones para aprender a programar un robot con bloques, y una interfaz para manejar en vivo los 6 robots ESP32 del laboratorio por MQTT. Lo hice como colaborador ad honorem en Robótica UAI.</p>
+                <dl class="mt-8 md:mt-0 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-1 gap-4 font-mono text-sm">
+                <div><dt class="text-zinc-400">Año</dt><dd class="mt-1 [overflow-wrap:anywhere]">2026</dd></div>
+                <div><dt class="text-zinc-400">Rol</dt><dd class="mt-1 [overflow-wrap:anywhere]">Robótica UAI, ad honorem</dd></div>
+                <div><dt class="text-zinc-400">Acceso</dt><dd class="mt-1 [overflow-wrap:anywhere]"><a href="https://robot-simulator-five.vercel.app" target="_blank" rel="noopener" class="text-amber-400 hover:text-amber-300 underline underline-offset-4">robot-simulator-five.vercel.app</a></dd></div>
+                </dl>
+            </div>
+            <figure class="relative mt-12 md:mt-16">
+                <div class="glow absolute -inset-x-6 -inset-y-16 pointer-events-none" aria-hidden="true"></div>
+                <div class="relative">
+                    <div class="rounded-xl border border-white/10 bg-zinc-900 overflow-hidden">
+                        <div class="flex items-center gap-3 px-4 h-9 border-b border-white/10 font-mono text-xs text-zinc-400">
+                            <span class="flex gap-1.5 shrink-0" aria-hidden="true"><i class="block w-2.5 h-2.5 rounded-full bg-white/15"></i><i class="block w-2.5 h-2.5 rounded-full bg-white/15"></i><i class="block w-2.5 h-2.5 rounded-full bg-white/15"></i></span>
+                            <span class="truncate">robot-simulator-five.vercel.app</span>
+                        </div>
+                        <img src="../images/proyectos/robotics-sim-sandbox.webp" width="1200" height="750" fetchpriority="high" alt="Sandbox del simulador: un programa que esquiva muros con el sensor y el código Arduino que genera" class="block w-full h-auto">
+                    </div>
+                </div>
+                <figcaption class="relative text-sm text-zinc-400 mt-3">Sandbox: un programa que avanza y gira cuando el sensor detecta un muro. Abajo, la línea del sketch que se está ejecutando.</figcaption>
+            </figure>
+        </div>
+    </header>
+
+    <main class="px-6 mt-14 md:mt-20">
+        <div class="max-w-5xl mx-auto">
+
+            <section class="md:grid md:grid-cols-[13rem_1fr] md:gap-10 py-14 md:py-20 border-t border-white/10">
+                <h2 class="font-mono text-xl md:text-2xl font-bold mb-6 md:mb-0">El problema</h2>
+                <div class="max-w-[65ch]">
+                    <div class="space-y-4 text-zinc-300 leading-relaxed">
+                    <p>Para mover un robot por primera vez, un estudiante tenía que aprender a la vez el microcontrolador, el IDE de Arduino, C++, el puente H y la lógica de control. Si algo fallaba, el robot simplemente no hacía nada.</p>
+                    <p>Hacía falta una forma de que alguien que nunca programó viera al robot moverse en los primeros minutos, primero en pantalla y después con el hardware real.</p>
+                    </div>
+                </div>
+            </section>
+
+
+            <section class="md:grid md:grid-cols-[13rem_1fr] md:gap-10 py-14 md:py-20 border-t border-white/10">
+                <h2 class="font-mono text-xl md:text-2xl font-bold mb-6 md:mb-0">Qué hice</h2>
+                <div class="max-w-[65ch]">
+                    <dl>
+                        <div class="py-5 first:pt-0 border-b border-white/10 last:border-0">
+                            <dt class="font-mono font-bold">Simulador con 8 lecciones</dt>
+                            <dd class="mt-2 text-zinc-400 leading-relaxed">De “Bloques” a “Integración”, pasando por secuencias, variables, repeticiones y sensores. Cada lección explica el concepto, deja un desafío y comprueba sola si el robot cumplió el criterio. La siguiente se desbloquea al completar la anterior.</dd>
+                        </div>
+                        <div class="py-5 first:pt-0 border-b border-white/10 last:border-0">
+                            <dt class="font-mono font-bold">Sensor de distancia simulado</dt>
+                            <dd class="mt-2 text-zinc-400 leading-relaxed">El robot mide la distancia al obstáculo de enfrente, como el sensor ultrasónico del robot real, así los programas pueden decidir qué hacer cuando algo les bloquea el camino.</dd>
+                        </div>
+                        <div class="py-5 first:pt-0 border-b border-white/10 last:border-0">
+                            <dt class="font-mono font-bold">Sandbox con editor de mapas</dt>
+                            <dd class="mt-2 text-zinc-400 leading-relaxed">Práctica libre con todos los bloques: se dibujan muros, inicio y meta sobre una grilla, y el mapa queda guardado en el navegador.</dd>
+                        </div>
+                        <div class="py-5 first:pt-0 border-b border-white/10 last:border-0">
+                            <dt class="font-mono font-bold">El código del robot real</dt>
+                            <dd class="mt-2 text-zinc-400 leading-relaxed">Al lado de los bloques se genera un sketch de Arduino UNO completo, listo para cargar, y mientras corre el programa se resalta la línea que se está ejecutando.</dd>
+                        </div>
+                        <div class="py-5 first:pt-0 border-b border-white/10 last:border-0">
+                            <dt class="font-mono font-bold">Control en vivo de la flota</dt>
+                            <dd class="mt-2 text-zinc-400 leading-relaxed">En el laboratorio: bloques propios y una consola con flechas y teclado para manejar los 6 robots ESP32 por MQTT, con un paro general que frena a todos a la vez.</dd>
+                        </div>
+                    </dl>
+                </div>
+            </section>
+
+
+            <section class="py-14 md:py-20 border-t border-white/10">
+                <h2 class="font-mono text-xl md:text-2xl font-bold mb-8">Más pantallas</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+                    <figure class="min-w-0">
+                    <div class="rounded-xl border border-white/10 bg-zinc-900 overflow-hidden">
+                        <div class="flex items-center gap-3 px-4 h-9 border-b border-white/10 font-mono text-xs text-zinc-400">
+                            <span class="flex gap-1.5 shrink-0" aria-hidden="true"><i class="block w-2.5 h-2.5 rounded-full bg-white/15"></i><i class="block w-2.5 h-2.5 rounded-full bg-white/15"></i><i class="block w-2.5 h-2.5 rounded-full bg-white/15"></i></span>
+                            <span class="truncate">robot-simulator-five.vercel.app</span>
+                        </div>
+                        <img src="../images/proyectos/robotics-sim-leccion.webp" width="1200" height="750" loading="lazy" alt="Primera lección del simulador con la explicación, los bloques y el robot llegando a la meta" class="block w-full h-auto">
+                    </div>
+                        <figcaption class="text-sm text-zinc-400 mt-3 leading-relaxed">Lección 1: explicación a la izquierda, bloques al medio, simulador y código a la derecha.</figcaption>
+                    </figure>
+                    <figure class="min-w-0">
+                    <div class="rounded-xl border border-white/10 bg-zinc-900 overflow-hidden">
+                        <div class="flex items-center gap-3 px-4 h-9 border-b border-white/10 font-mono text-xs text-zinc-400">
+                            <span class="flex gap-1.5 shrink-0" aria-hidden="true"><i class="block w-2.5 h-2.5 rounded-full bg-white/15"></i><i class="block w-2.5 h-2.5 rounded-full bg-white/15"></i><i class="block w-2.5 h-2.5 rounded-full bg-white/15"></i></span>
+                            <span class="truncate">robotics / web / index.html</span>
+                        </div>
+                        <img src="../images/proyectos/robotics-blockly.webp" width="1200" height="750" loading="lazy" alt="Interfaz de control en vivo con un programa de bloques y el código generado" class="block w-full h-auto">
+                    </div>
+                        <figcaption class="text-sm text-zinc-400 mt-3 leading-relaxed">La interfaz de control de los robots reales. Captura local, sin robots conectados.</figcaption>
+                    </figure>
+                </div>
+            </section>
+
+
+            <section class="md:grid md:grid-cols-[13rem_1fr] md:gap-10 py-14 md:py-20 border-t border-white/10">
+                <h2 class="font-mono text-xl md:text-2xl font-bold mb-6 md:mb-0">Stack</h2>
+                <div class="max-w-[65ch]">
+                    <div class="space-y-8">
+                    <div>
+                        <h3 class="text-zinc-400 text-sm mb-3">Simulador</h3>
+                        <ul class="flex flex-wrap gap-2 font-mono text-sm">
+                            <li class="px-3 py-1 border border-white/15 rounded">JavaScript</li> <li class="px-3 py-1 border border-white/15 rounded">Blockly</li> <li class="px-3 py-1 border border-white/15 rounded">Canvas</li>
+                        </ul>
+                        <p class="text-zinc-400 mt-3 leading-relaxed">Sin build ni dependencias más allá de Blockly: se publica como archivos estáticos.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-zinc-400 text-sm mb-3">Robots</h3>
+                        <ul class="flex flex-wrap gap-2 font-mono text-sm">
+                            <li class="px-3 py-1 border border-white/15 rounded">Arduino UNO</li> <li class="px-3 py-1 border border-white/15 rounded">ESP32</li> <li class="px-3 py-1 border border-white/15 rounded">MQTT</li> <li class="px-3 py-1 border border-white/15 rounded">Python</li> <li class="px-3 py-1 border border-white/15 rounded">L298N</li> <li class="px-3 py-1 border border-white/15 rounded">HC-SR04</li>
+                        </ul>
+                        <p class="text-zinc-400 mt-3 leading-relaxed">El sketch generado apunta a un Arduino UNO con puente H y sensor ultrasónico. Los robots del laboratorio reciben comandos JSON por MQTT a través de un puente en Python.</p>
+                    </div>
+                    </div>
+                </div>
+            </section>
+
+
+            <section class="md:grid md:grid-cols-[13rem_1fr] md:gap-10 py-14 md:py-20 border-t border-white/10">
+                <h2 class="font-mono text-xl md:text-2xl font-bold mb-6 md:mb-0">Decisiones</h2>
+                <div class="max-w-[65ch]">
+                    <div class="space-y-5 text-zinc-400 leading-relaxed">
+                    <p><strong class="font-mono text-white">Un solo programa para todo.</strong> La simulación, la línea resaltada y el sketch de Arduino salen del mismo árbol de programa. Lo que se ve moverse en pantalla es lo que se carga en el robot.</p>
+                    <p><strong class="font-mono text-white">Las acciones del robot real.</strong> El simulador solo tiene movimientos que existen en el firmware de PaperOne. Nada que funcione en pantalla y no en el laboratorio.</p>
+                    <p><strong class="font-mono text-white">La devolución describe, no corrige.</strong> Si el desafío no se cumple, el simulador cuenta qué hizo el robot, pero nunca dice qué bloque cambiar. El razonamiento lo hace el estudiante.</p>
+                    <p><strong class="font-mono text-white">Paro general siempre visible.</strong> Con seis robots en una mesa, frenar todo tiene que estar a un clic (o a Esc) desde cualquier pantalla.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="py-14 md:py-20 border-t border-white/10 md:grid md:grid-cols-[13rem_1fr] md:gap-10">
+                <h2 class="font-mono text-xl md:text-2xl font-bold mb-4 md:mb-0">Verlo andando</h2>
+                <div>
+                    <p class="text-zinc-300 mb-6">El simulador es público y tiene un sandbox para probar sin seguir las lecciones. El control de los robots reales funciona solo en el laboratorio.</p>
+                    <div class="flex flex-wrap gap-3">
+                        <a href="https://robot-simulator-five.vercel.app" target="_blank" rel="noopener" class="inline-flex items-center px-5 py-3 rounded-lg font-mono text-sm font-bold transition-colors bg-white text-black hover:bg-amber-400">Abrir el simulador</a>
+                        <a href="../index.html#proyectos" class="inline-flex items-center px-5 py-3 rounded-lg font-mono text-sm font-bold transition-colors border border-white/15 hover:border-white/40">Ver otros proyectos</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="border-t border-white/10 py-10 px-6 font-mono text-sm">
+        <div class="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+            <p class="text-zinc-400">© 2026 Lucas Giovinazzo</p>
+            <div class="flex items-center gap-6">
+                <a href="https://github.com/lucasgiovinazzo" target="_blank" rel="noopener" class="text-zinc-400 hover:text-white transition-colors">GitHub</a>
+                <a href="https://www.linkedin.com/in/lucas-giovinazzo-920b4b275/" target="_blank" rel="noopener" class="text-zinc-400 hover:text-white transition-colors">LinkedIn</a>
+                <a href="mailto:lucas.giovinazzo@hotmail.com" class="text-zinc-400 hover:text-white transition-colors">Email</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

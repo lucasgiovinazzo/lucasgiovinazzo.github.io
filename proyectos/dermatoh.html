@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Caso de estudio: sitio y sistema de turnos con seña por Mercado Pago para un consultorio de dermatología.">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%276%27 fill=%27%23000%27/%3E%3Ctext x=%2716%27 y=%2722%27 font-family=%27monospace%27 font-size=%2716%27 font-weight=%27700%27 fill=%27%23F59E0B%27 text-anchor=%27middle%27%3ELG%3C/text%3E%3C/svg%3E">
+    <title>dermatoH - Caso de estudio</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;700;800&display=swap" rel="stylesheet"></noscript>
+    <link rel="stylesheet" href="../css/tw.css">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .glow { background: radial-gradient(60% 55% at 50% 45%, rgba(245,158,11,.16), transparent 70%); }
+        :focus-visible { outline: 2px solid #F59E0B; outline-offset: 3px; }
+    </style>
+</head>
+<body class="bg-black text-white antialiased overflow-x-hidden">
+    <nav class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between font-mono text-sm">
+        <a href="../index.html" class="font-bold hover:text-amber-500 transition-colors" aria-label="Inicio">LG</a>
+        <a href="../index.html#proyectos" class="text-zinc-400 hover:text-white transition-colors">Todos los proyectos</a>
+    </nav>
+
+    <header class="px-6 pt-10 md:pt-16">
+        <div class="max-w-5xl mx-auto">
+            <h1 class="font-mono font-extrabold tracking-tight text-5xl md:text-7xl break-words">dermatoH</h1>
+            <p class="font-mono text-xl md:text-2xl text-amber-400 mt-3">Turnos con seña online</p>
+            <div class="mt-8 md:grid md:grid-cols-[1fr_auto] md:gap-16 items-start">
+                <p class="text-lg text-zinc-300 leading-relaxed max-w-[60ch]">Sitio para un consultorio de dermatología y tricología en Palermo, con reserva de turnos, cobro de seña por Mercado Pago y un panel para que el consultorio maneje su agenda.</p>
+                <dl class="mt-8 md:mt-0 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-1 gap-4 font-mono text-sm">
+                <div><dt class="text-zinc-400">Año</dt><dd class="mt-1 [overflow-wrap:anywhere]">2026</dd></div>
+                <div><dt class="text-zinc-400">Rol</dt><dd class="mt-1 [overflow-wrap:anywhere]">Proyecto individual, cliente real</dd></div>
+                <div><dt class="text-zinc-400">Acceso</dt><dd class="mt-1 [overflow-wrap:anywhere]"><a href="https://dermatoh.vercel.app" target="_blank" rel="noopener" class="text-amber-400 hover:text-amber-300 underline underline-offset-4">dermatoh.vercel.app</a></dd></div>
+                </dl>
+            </div>
+            <figure class="relative mt-12 md:mt-16">
+                <div class="glow absolute -inset-x-6 -inset-y-16 pointer-events-none" aria-hidden="true"></div>
+                <div class="relative">
+                    <div class="rounded-xl border border-white/10 bg-zinc-900 overflow-hidden">
+                        <div class="flex items-center gap-3 px-4 h-9 border-b border-white/10 font-mono text-xs text-zinc-400">
+                            <span class="flex gap-1.5 shrink-0" aria-hidden="true"><i class="block w-2.5 h-2.5 rounded-full bg-white/15"></i><i class="block w-2.5 h-2.5 rounded-full bg-white/15"></i><i class="block w-2.5 h-2.5 rounded-full bg-white/15"></i></span>
+                            <span class="truncate">dermatoh / index.html</span>
+                        </div>
+                        <img src="../images/proyectos/dermatoh-home.webp" width="1200" height="750" fetchpriority="high" alt="Portada del sitio de dermatoH" class="block w-full h-auto">
+                    </div>
+                </div>
+                <figcaption class="relative text-sm text-zinc-400 mt-3">Portada del sitio público.</figcaption>
+            </figure>
+        </div>
+    </header>
+
+    <main class="px-6 mt-14 md:mt-20">
+        <div class="max-w-5xl mx-auto">
+
+            <section class="md:grid md:grid-cols-[13rem_1fr] md:gap-10 py-14 md:py-20 border-t border-white/10">
+                <h2 class="font-mono text-xl md:text-2xl font-bold mb-6 md:mb-0">El problema</h2>
+                <div class="max-w-[65ch]">
+                    <div class="space-y-4 text-zinc-300 leading-relaxed">
+                    <p>Los turnos se coordinaban por WhatsApp, a mano. Cada reserva era una conversación con idas y vueltas para encontrar un horario libre.</p>
+                    <p>El consultorio necesitaba que el paciente pudiera elegir tratamiento y horario solo, dejar una seña que confirme el compromiso, y que el médico se entere sin revisar nada a mano. Y que nadie pueda reservar dos veces el mismo horario.</p>
+                    </div>
+                </div>
+            </section>
+
+
+            <section class="md:grid md:grid-cols-[13rem_1fr] md:gap-10 py-14 md:py-20 border-t border-white/10">
+                <h2 class="font-mono text-xl md:text-2xl font-bold mb-6 md:mb-0">Qué hice</h2>
+                <div class="max-w-[65ch]">
+                    <dl>
+                        <div class="py-5 first:pt-0 border-b border-white/10 last:border-0">
+                            <dt class="font-mono font-bold">Sitio público</dt>
+                            <dd class="mt-2 text-zinc-400 leading-relaxed">Servicios, profesional, lista de tratamientos con precios y ubicación. El WhatsApp queda siempre a mano como canal alternativo.</dd>
+                        </div>
+                        <div class="py-5 first:pt-0 border-b border-white/10 last:border-0">
+                            <dt class="font-mono font-bold">Reserva con seña del 30%</dt>
+                            <dd class="mt-2 text-zinc-400 leading-relaxed">El paciente elige tratamiento y un horario libre, ve cuánto paga ahora y cuánto en el consultorio, y va al checkout de Mercado Pago. El horario queda tomado mientras paga y se libera solo si no completa el pago.</dd>
+                        </div>
+                        <div class="py-5 first:pt-0 border-b border-white/10 last:border-0">
+                            <dt class="font-mono font-bold">Confirmación verificada</dt>
+                            <dd class="mt-2 text-zinc-400 leading-relaxed">Cuando Mercado Pago avisa un pago, el servidor lo consulta con su propio token antes de confirmar nada: nunca le cree a la URL de retorno ni al cuerpo del aviso. Si llega un pago que no cierra (importe distinto, tarde, turno cancelado), queda marcado para revisar.</dd>
+                        </div>
+                        <div class="py-5 first:pt-0 border-b border-white/10 last:border-0">
+                            <dt class="font-mono font-bold">Panel del consultorio</dt>
+                            <dd class="mt-2 text-zinc-400 leading-relaxed">Agenda de turnos, bloqueo de horarios puntuales, horario semanal con días especiales y una lista de “pagos a revisar” para no perder plata cobrada que no confirmó un turno.</dd>
+                        </div>
+                    </dl>
+                </div>
+            </section>
+
+
+            <section class="py-14 md:py-20 border-t border-white/10">
+                <h2 class="font-mono text-xl md:text-2xl font-bold mb-8">Más pantallas</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+                    <figure class="min-w-0">
+                    <div class="rounded-xl border border-white/10 bg-zinc-900 overflow-hidden">
+                        <div class="flex items-center gap-3 px-4 h-9 border-b border-white/10 font-mono text-xs text-zinc-400">
+                            <span class="flex gap-1.5 shrink-0" aria-hidden="true"><i class="block w-2.5 h-2.5 rounded-full bg-white/15"></i><i class="block w-2.5 h-2.5 rounded-full bg-white/15"></i><i class="block w-2.5 h-2.5 rounded-full bg-white/15"></i></span>
+                            <span class="truncate">dermatoh / index.html#contacto</span>
+                        </div>
+                        <img src="../images/proyectos/dermatoh-turnos.webp" width="1200" height="750" loading="lazy" alt="Formulario de reserva de turno con el cálculo de la seña" class="block w-full h-auto">
+                    </div>
+                        <figcaption class="text-sm text-zinc-400 mt-3 leading-relaxed">Reserva: el precio sale del servidor y la seña del 30% se calcula a la vista.</figcaption>
+                    </figure>
+                    <figure class="min-w-0">
+                    <div class="rounded-xl border border-white/10 bg-zinc-900 overflow-hidden">
+                        <div class="flex items-center gap-3 px-4 h-9 border-b border-white/10 font-mono text-xs text-zinc-400">
+                            <span class="flex gap-1.5 shrink-0" aria-hidden="true"><i class="block w-2.5 h-2.5 rounded-full bg-white/15"></i><i class="block w-2.5 h-2.5 rounded-full bg-white/15"></i><i class="block w-2.5 h-2.5 rounded-full bg-white/15"></i></span>
+                            <span class="truncate">dermatoh / admin.html</span>
+                        </div>
+                        <img src="../images/proyectos/dermatoh-panel.webp" width="1200" height="750" loading="lazy" alt="Panel del consultorio con la agenda de turnos" class="block w-full h-auto">
+                    </div>
+                        <figcaption class="text-sm text-zinc-400 mt-3 leading-relaxed">Panel del consultorio. Captura con datos ficticios: nunca se muestran pacientes reales.</figcaption>
+                    </figure>
+                </div>
+            </section>
+
+
+            <section class="md:grid md:grid-cols-[13rem_1fr] md:gap-10 py-14 md:py-20 border-t border-white/10">
+                <h2 class="font-mono text-xl md:text-2xl font-bold mb-6 md:mb-0">Stack</h2>
+                <div class="max-w-[65ch]">
+                    <div class="space-y-8">
+                    <div>
+                        <h3 class="text-zinc-400 text-sm mb-3">Frontend</h3>
+                        <ul class="flex flex-wrap gap-2 font-mono text-sm">
+                            <li class="px-3 py-1 border border-white/15 rounded">HTML</li> <li class="px-3 py-1 border border-white/15 rounded">CSS</li> <li class="px-3 py-1 border border-white/15 rounded">JavaScript vanilla</li>
+                        </ul>
+                        <p class="text-zinc-400 mt-3 leading-relaxed">Sin dependencias en el sitio: solo <code>fetch</code>.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-zinc-400 text-sm mb-3">Backend</h3>
+                        <ul class="flex flex-wrap gap-2 font-mono text-sm">
+                            <li class="px-3 py-1 border border-white/15 rounded">Vercel Functions</li> <li class="px-3 py-1 border border-white/15 rounded">Neon Postgres</li> <li class="px-3 py-1 border border-white/15 rounded">Mercado Pago API</li> <li class="px-3 py-1 border border-white/15 rounded">Resend</li>
+                        </ul>
+                        <p class="text-zinc-400 mt-3 leading-relaxed">Funciones serverless en São Paulo, junto a la base. Emails al médico y al paciente cuando se confirma un turno.</p>
+                    </div>
+                    </div>
+                </div>
+            </section>
+
+
+            <section class="md:grid md:grid-cols-[13rem_1fr] md:gap-10 py-14 md:py-20 border-t border-white/10">
+                <h2 class="font-mono text-xl md:text-2xl font-bold mb-6 md:mb-0">Decisiones</h2>
+                <div class="max-w-[65ch]">
+                    <div class="space-y-5 text-zinc-400 leading-relaxed">
+                    <p><strong class="font-mono text-white">Neon en vez de Supabase.</strong> Arranqué con Supabase, pero el plan gratuito pausa el proyecto por inactividad y una vez dejó el sitio sin turnos. Migré a Neon, que se reactiva solo con la primera consulta.</p>
+                    <p><strong class="font-mono text-white">Un turno por horario, en la base.</strong> Un índice único parcial sobre los turnos activos hace que dos personas no puedan tomar el mismo horario aunque reserven al mismo tiempo. No depende del código de la aplicación.</p>
+                    <p><strong class="font-mono text-white">El pago se registra en una sola función SQL.</strong> <code>registrar_pago</code> decide en una transacción si el pago confirma el turno o va a revisión, así un aviso repetido de Mercado Pago no duplica nada. Tiene su propio test de 11 casos.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="py-14 md:py-20 border-t border-white/10 md:grid md:grid-cols-[13rem_1fr] md:gap-10">
+                <h2 class="font-mono text-xl md:text-2xl font-bold mb-4 md:mb-0">Verlo andando</h2>
+                <div>
+                    <p class="text-zinc-300 mb-6">Está publicado y se puede usar.</p>
+                    <div class="flex flex-wrap gap-3">
+                        <a href="https://dermatoh.vercel.app" target="_blank" rel="noopener" class="inline-flex items-center px-5 py-3 rounded-lg font-mono text-sm font-bold transition-colors bg-white text-black hover:bg-amber-400">Abrir el sitio</a>
+                        <a href="../index.html#proyectos" class="inline-flex items-center px-5 py-3 rounded-lg font-mono text-sm font-bold transition-colors border border-white/15 hover:border-white/40">Ver otros proyectos</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="border-t border-white/10 py-10 px-6 font-mono text-sm">
+        <div class="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+            <p class="text-zinc-400">© 2026 Lucas Giovinazzo</p>
+            <div class="flex items-center gap-6">
+                <a href="https://github.com/lucasgiovinazzo" target="_blank" rel="noopener" class="text-zinc-400 hover:text-white transition-colors">GitHub</a>
+                <a href="https://www.linkedin.com/in/lucas-giovinazzo-920b4b275/" target="_blank" rel="noopener" class="text-zinc-400 hover:text-white transition-colors">LinkedIn</a>
+                <a href="mailto:lucas.giovinazzo@hotmail.com" class="text-zinc-400 hover:text-white transition-colors">Email</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
