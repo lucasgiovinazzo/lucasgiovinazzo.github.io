@@ -12,97 +12,22 @@ const navToggle = document.getElementById('navToggle');
 const mobileMenu = document.getElementById('mobileMenu');
 const navLinks = document.querySelectorAll('.nav-link');
 
-// Navbar scroll effect - Muestra línea naranja cuando haces scroll
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-        navbar.style.borderBottomColor = 'rgba(245, 158, 11, 0.2)'; // Amber/naranja
-    } else {
-        navbar.style.borderBottomColor = 'rgba(255, 255, 255, 0.05)';
-    }
-});
+// Línea naranja al hacer scroll (estilos en css/tw-input.css)
+window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', scrollY > 50));
 
-// Mobile menu toggle
-navToggle?.addEventListener('click', () => {
-    mobileMenu?.classList.toggle('hidden');
+// Mobile menu: abre/cierra y anima el hamburger vía .open
+function setMenu(open) {
+    mobileMenu?.classList.toggle('hidden', !open);
+    navToggle?.classList.toggle('open', open);
+}
 
-    // Animate hamburger
-    const spans = navToggle.querySelectorAll('span');
-    if (!mobileMenu?.classList.contains('hidden')) {
-        spans[0].style.transform = 'rotate(45deg) translate(6px, 6px)';
-        spans[1].style.opacity = '0';
-        spans[2].style.transform = 'rotate(-45deg) translate(6px, -6px)';
-    } else {
-        spans[0].style.transform = '';
-        spans[1].style.opacity = '1';
-        spans[2].style.transform = '';
-    }
-});
-
-// Close mobile menu on link click
-navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-        mobileMenu?.classList.add('hidden');
-        const spans = navToggle?.querySelectorAll('span');
-        if (spans) {
-            spans[0].style.transform = '';
-            spans[1].style.opacity = '1';
-            spans[2].style.transform = '';
-        }
-    });
-});
-
-// Close mobile menu on outside click
+navToggle?.addEventListener('click', () => setMenu(mobileMenu.classList.contains('hidden')));
+navLinks.forEach(link => link.addEventListener('click', () => setMenu(false)));
 document.addEventListener('click', (e) => {
-    if (!navbar.contains(e.target) && !mobileMenu?.classList.contains('hidden')) {
-        mobileMenu?.classList.add('hidden');
-        const spans = navToggle?.querySelectorAll('span');
-        if (spans) {
-            spans[0].style.transform = '';
-            spans[1].style.opacity = '1';
-            spans[2].style.transform = '';
-        }
-    }
+    if (!navbar.contains(e.target)) setMenu(false);
 });
 
-// =============================================
-// SMOOTH SCROLL
-// =============================================
-
-navLinks.forEach(link => {
-    link.addEventListener('click', function(e) {
-        e.preventDefault();
-        const targetId = this.getAttribute('href');
-        const targetSection = document.querySelector(targetId);
-
-        if (targetSection) {
-            const navHeight = navbar.offsetHeight;
-            const targetPosition = targetSection.offsetTop - navHeight;
-
-            window.scrollTo({
-                top: targetPosition,
-                behavior: 'smooth'
-            });
-        }
-    });
-});
-
-// Hero scroll button
-const heroScroll = document.querySelector('.hero-scroll a');
-heroScroll?.addEventListener('click', function(e) {
-    e.preventDefault();
-    const targetId = this.getAttribute('href');
-    const targetSection = document.querySelector(targetId);
-
-    if (targetSection) {
-        const navHeight = navbar.offsetHeight;
-        const targetPosition = targetSection.offsetTop - navHeight;
-
-        window.scrollTo({
-            top: targetPosition,
-            behavior: 'smooth'
-        });
-    }
-});
+// Smooth scroll: nativo (html.scroll-smooth + scroll-padding-top en css/tw-input.css)
 
 // =============================================
 // ACTIVE NAV LINK ON SCROLL
@@ -127,73 +52,6 @@ function highlightNavLink() {
 }
 
 window.addEventListener('scroll', highlightNavLink);
-
-// =============================================
-// CONTACTO FORM
-// =============================================
-
-const contactForm = document.getElementById('contactForm');
-
-contactForm?.addEventListener('submit', function(e) {
-    e.preventDefault();
-
-    // Get form data
-    const formData = {
-        nombre: document.getElementById('nombre').value,
-        email: document.getElementById('email').value,
-        mensaje: document.getElementById('mensaje').value
-    };
-
-    // Crear el mailto link
-    const subject = encodeURIComponent(`Consulta de ${formData.nombre}`);
-    const body = encodeURIComponent(
-        `Nombre: ${formData.nombre}\n` +
-        `Email: ${formData.email}\n\n` +
-        `Mensaje:\n${formData.mensaje}`
-    );
-
-    const mailtoLink = `mailto:lucas.giovinazzo@hotmail.com?subject=${subject}&body=${body}`;
-
-    // Abrir cliente de email
-    window.location.href = mailtoLink;
-
-    // Opcional: Limpiar formulario
-    setTimeout(() => {
-        contactForm.reset();
-    }, 1000);
-
-    // Opcional: Mostrar mensaje de confirmación
-    alert('Se abrirá tu cliente de email para enviar el mensaje.');
-});
-
-// =============================================
-// SCROLL ANIMATIONS (Fade In)
-// =============================================
-
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-};
-
-const fadeInElements = document.querySelectorAll(
-    '.proyecto-card, .skill-category, .contacto-item, .proyecto-card-small'
-);
-
-const fadeInObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-        }
-    });
-}, observerOptions);
-
-fadeInElements.forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(20px)';
-    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-    fadeInObserver.observe(el);
-});
 
 // =============================================
 // COPY EMAIL TO CLIPBOARD
@@ -227,147 +85,6 @@ emailLinks.forEach(link => {
         });
     });
 });
-
-// =============================================
-// PERFORMANCE: Lazy Loading Images
-// =============================================
-
-// Si agregás imágenes después, este código las lazy-loadea
-const images = document.querySelectorAll('img[data-src]');
-
-const imageObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            const img = entry.target;
-            img.src = img.dataset.src;
-            img.removeAttribute('data-src');
-            imageObserver.unobserve(img);
-        }
-    });
-});
-
-images.forEach(img => imageObserver.observe(img));
-
-// =============================================
-// UTILITIES
-// =============================================
-
-// Log de bienvenida en consola
-console.log(
-    '%c👋 Hola! Soy Lucas Giovinazzo',
-    'color: #F59E0B; font-size: 24px; font-weight: bold;'
-);
-console.log(
-    '%cDesarrollador Web Full-Stack',
-    'color: #A1A1AA; font-size: 16px;'
-);
-console.log(
-    '%cPortfolio desarrollado con HTML, Tailwind CSS y JavaScript',
-    'color: #71717A; font-size: 12px;'
-);
-
-// =============================================
-// INTERACTIVE GLOW - Sigue al mouse y cambia de color
-// =============================================
-
-const heroSection = document.querySelector('#hero');
-const glowOrb = document.getElementById('glowOrb');
-const glowShape = document.getElementById('glowShape');
-
-if (heroSection && glowOrb && glowShape) {
-    // Colores disponibles (SVG fill)
-    const colors = [
-        'rgba(245, 158, 11, 0.6)', // Amber
-        'rgba(59, 130, 246, 0.6)',  // Blue
-        'rgba(236, 72, 153, 0.6)',  // Pink
-        'rgba(139, 92, 246, 0.6)',  // Purple
-        'rgba(34, 197, 94, 0.6)'    // Green
-    ];
-
-    let currentColorIndex = 0;
-    let targetX = 200; // Posición inicial izquierda
-    let targetY = 200;
-    let currentX = 200;
-    let currentY = 200;
-    let rotation = 0;
-    let targetRotation = 0;
-
-    // Establecer color inicial
-    glowShape.style.fill = colors[currentColorIndex];
-
-    function animate() {
-        // Suavizar movimiento (lerp)
-        currentX += (targetX - currentX) * 0.08;
-        currentY += (targetY - currentY) * 0.08;
-        rotation += (targetRotation - rotation) * 0.05;
-
-        glowOrb.style.transform = `translate(${currentX - 300}px, ${currentY - 300}px) rotate(${rotation}deg)`;
-
-        requestAnimationFrame(animate);
-    }
-
-    // Seguir al mouse (solo en el lado izquierdo)
-    heroSection.addEventListener('mousemove', (e) => {
-        const rect = heroSection.getBoundingClientRect();
-        const mouseX = e.clientX - rect.left;
-        const mouseY = e.clientY - rect.top;
-
-        // Limitar al lado izquierdo (50% de la pantalla)
-        if (mouseX < rect.width * 0.5) {
-            targetX = mouseX;
-            targetY = mouseY;
-
-            // Rotar sutilmente basado en posición del mouse
-            targetRotation = (mouseX / rect.width) * 30 - 15;
-        }
-
-        // Hacer el glow más grande cuando mueves el mouse
-        glowOrb.style.width = '700px';
-        glowOrb.style.height = '700px';
-        glowOrb.style.filter = 'blur(70px)';
-        glowOrb.style.opacity = '1';
-    });
-
-    // Volver a tamaño normal cuando sale el mouse
-    heroSection.addEventListener('mouseleave', () => {
-        targetX = 200;
-        targetY = 200;
-        targetRotation = 0;
-        glowOrb.style.width = '600px';
-        glowOrb.style.height = '600px';
-        glowOrb.style.filter = 'blur(60px)';
-        glowOrb.style.opacity = '0.8';
-    });
-
-    // Cambiar color al hacer click
-    heroSection.addEventListener('click', (e) => {
-        const rect = heroSection.getBoundingClientRect();
-        const mouseX = e.clientX - rect.left;
-
-        // Solo cambiar color si haces click en el lado izquierdo
-        if (mouseX < rect.width * 0.5) {
-            currentColorIndex = (currentColorIndex + 1) % colors.length;
-            glowShape.style.fill = colors[currentColorIndex];
-
-            // Efecto de "pulso" al hacer click
-            glowOrb.style.width = '850px';
-            glowOrb.style.height = '850px';
-            glowOrb.style.filter = 'blur(90px)';
-
-            // Rotar 360 grados
-            targetRotation += 360;
-
-            setTimeout(() => {
-                glowOrb.style.width = '700px';
-                glowOrb.style.height = '700px';
-                glowOrb.style.filter = 'blur(70px)';
-            }, 200);
-        }
-    });
-
-    // Iniciar animación
-    animate();
-}
 
 // =============================================
 // ROBOT CAT MASCOT (PIXEL ART SPRITES)
@@ -714,11 +431,4 @@ if (robotCat && yarnBall) {
     animate();
 }
 
-// =============================================
-// INITIALIZE
-// =============================================
-
-document.addEventListener('DOMContentLoaded', () => {
-    console.log('✓ Portfolio cargado exitosamente');
-    highlightNavLink(); // Iniciar highlight
-});
+highlightNavLink();

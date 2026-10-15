@@ -11,7 +11,7 @@ Portfolio profesional que muestra mis proyectos y habilidades como desarrollador
 ## 🛠️ Tecnologías Utilizadas
 
 - **HTML5** - Estructura semántica
-- **CSS3** - Diseño moderno y responsive (Flexbox, Grid, CSS Variables)
+- **Tailwind CSS 3** - Compilado a `css/tw.css` (`npx tailwindcss@3.4.17 -i css/tw-input.css -o css/tw.css --minify`)
 - **JavaScript (Vanilla)** - Interactividad y animaciones
 - **GitHub Pages** - Hosting
 
@@ -19,8 +19,6 @@ Portfolio profesional que muestra mis proyectos y habilidades como desarrollador
 
 - ✅ Diseño responsive (mobile-first)
 - ✅ Smooth scroll navigation
-- ✅ Animaciones sutiles al hacer scroll
-- ✅ Formulario de contacto funcional
 - ✅ Performance optimizada
 - ✅ SEO optimizado
 - ✅ Accesibilidad (semántica HTML)
@@ -31,14 +29,13 @@ Portfolio profesional que muestra mis proyectos y habilidades como desarrollador
 portfolio/
 ├── index.html              # Página principal
 ├── css/
-│   ├── styles.css          # Estilos globales
-│   └── case-study.css      # Estilos para casos de estudio
+│   ├── tw-input.css        # Fuente Tailwind + estilos propios
+│   └── tw.css              # CSS compilado (no editar)
 ├── js/
-│   └── main.js             # Lógica principal
-├── proyectos/
-│   └── ispm.html           # Caso de estudio: ISPM
-├── assets/
-│   └── images/             # Imágenes del portfolio
+│   └── main.js             # Navbar, copiar email, gato mascota
+├── proyectos/              # Casos de estudio
+├── images/                 # Imágenes del portfolio
+├── tailwind.config.js
 └── README.md               # Este archivo
 ```
 
