@@ -1,69 +1,26 @@
-# Lucas Giovinazzo - Portfolio
+# lucasgiovinazzo.com
 
-Portfolio personal de desarrollador web full-stack.
+Mi portfolio personal: proyectos, casos de estudio y contacto.
 
-🌐 **Live:** [https://lucasgiovinazzo.github.io](https://lucasgiovinazzo.github.io)
+**Sitio:** https://lucasgiovinazzo.com
 
-## 📋 Sobre el Portfolio
+Hecho con HTML, Tailwind CSS y JavaScript vanilla, publicado con GitHub Pages.
 
-Portfolio profesional que muestra mis proyectos y habilidades como desarrollador web. Diseñado con enfoque en simplicidad, performance y experiencia de usuario.
+## Desarrollo local
 
-## 🛠️ Tecnologías Utilizadas
+Compilar los estilos:
 
-- **HTML5** - Estructura semántica
-- **Tailwind CSS 3** - Compilado a `css/tw.css` (`npx tailwindcss@3.4.17 -i css/tw-input.css -o css/tw.css --minify`)
-- **JavaScript (Vanilla)** - Interactividad y animaciones
-- **GitHub Pages** - Hosting
-
-## ✨ Características
-
-- ✅ Diseño responsive (mobile-first)
-- ✅ Smooth scroll navigation
-- ✅ Performance optimizada
-- ✅ SEO optimizado
-- ✅ Accesibilidad (semántica HTML)
-
-## 📂 Estructura del Proyecto
-
-```
-portfolio/
-├── index.html              # Página principal
-├── css/
-│   ├── tw-input.css        # Fuente Tailwind + estilos propios
-│   └── tw.css              # CSS compilado (no editar)
-├── js/
-│   └── main.js             # Navbar, copiar email, gato mascota
-├── proyectos/              # Casos de estudio
-├── images/                 # Imágenes del portfolio
-├── tailwind.config.js
-└── README.md               # Este archivo
+```bash
+npx tailwindcss@3.4.17 -i css/tw-input.css -o css/tw.css --minify
 ```
 
-## 🚀 Deployment
+Después abrir `index.html` en el navegador. Cada push a `main` se publica automáticamente.
 
-Este portfolio está desplegado en **GitHub Pages**.
+## Estructura
 
-### Cómo actualizar:
-
-1. Hacer cambios en los archivos
-2. Commit y push a GitHub:
-   ```bash
-   git add .
-   git commit -m "Descripción de cambios"
-   git push origin main
-   ```
-3. GitHub Pages se actualiza automáticamente
-
-## 📬 Contacto
-
-- **Email:** lucas.giovinazzo@hotmail.com
-- **LinkedIn:** [lucas-giovinazzo](https://www.linkedin.com/in/lucas-giovinazzo-920b4b275/)
-- **GitHub:** [@lucasgiovinazzo](https://github.com/lucasgiovinazzo)
-
-## 📝 Licencia
+- `index.html`: página principal
+- `proyectos/`: casos de estudio
+- `css/tw-input.css`: estilos fuente (el `tw.css` compilado no se edita a mano)
+- `js/main.js`: navbar e interacciones
 
 © 2026 Lucas Giovinazzo. Todos los derechos reservados.
-
----
-
-**Desarrollado con ❤️ por Lucas Giovinazzo**
